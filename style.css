@@ -64,3 +64,33 @@ nav > ul > li::after {
 nav > ul > li:hover::after {
     width: 100%;
 }
+
+.hero-section{
+    display: flex;
+}
+
+.hero-section>div{
+    flex: 1;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.hero-background-image{
+    display: flex;
+    background-image: url(./images/nutriimage2.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-background-image>h1{
+    text-align: center;
+  
+}
+
+ .hero-background-image .nutriBR{
+    color: #ccff99;
+    
+}
