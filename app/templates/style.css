@@ -9,6 +9,11 @@
     border: 2px solid #ccff99;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    left: 0%;
+    
 }
 #navbar .logo img{
     max-width: 100%;
@@ -66,6 +71,7 @@ nav > ul > li:hover::after {
 
 .hero-section{
     display: flex;
+    padding-top: 100px;
 }
 
 .hero-section>div{

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriPlan</title>
     <link rel="stylesheet" href="style.css">
-    <script src="forms.js"></script>
     
 </head>
 <body>
@@ -13,7 +12,7 @@
         <section id="navbar">
             <div class="logo"><a href=""><img src="images/NutriPlanLogo.jpeg" alt="Nutri Plan logo"></a></div>
             <nav><ul>
-                <li><a href="">PROGRAMS</a></li>
+                <li><a href="" id="showMeal">MY MEAL</a></li>
                 <li><a href="">RESOURCES</a></li>
                 <li><a href="">PAYMENT</a></li>
                 <li><a href="">ABOUT</a></li>
@@ -31,14 +30,16 @@
             </div>
         </section>
         <section class="mealPlanForm" id="mealPlanForm">
-            <form action="" method="get">
+            <form action="" method="get" id="inputForm">
                 <label for="mealName">INPUT A MEAL</label>
-                <input required type="text" placeholder="" id="mealName">
+                <input required type="text" placeholder="" id="mealName" name="mealName">
                 <label for="mealDescription">MEAL DESCRIPTION</label>
-                <textarea name="" id="mealDescription" placeholder="Can you give a description about the meal?"></textarea>
-                <button type="submit" value="submit">Submit</button>
+                <textarea name="" id="mealDescription" name="mealDescription" placeholder="Can you give a description about the meal?"></textarea>
+                <button type="submit" value="submit" id="submitMeal">Submit</button>
             </form>
+            <div id="showMealDetail">MEAL DETAILS</div>
         </section>
     </div>
 </body>
 </html>
+<script src="main.js"></script>
