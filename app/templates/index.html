@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriPlan</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div id="main">
         <section id="navbar">
             <div class="logo"><a href=""><img src="images/NutriPlanLogo.jpeg" alt="Nutri Plan logo"></a></div>
             <nav><ul>
-                <li><a href="">PROGRAMS</a></li>
+                <li><a href="" id="showMeal">MY MEAL</a></li>
                 <li><a href="">RESOURCES</a></li>
                 <li><a href="">PAYMENT</a></li>
                 <li><a href="">ABOUT</a></li>
             </ul></nav>
+            <button id="mealPlanDirection">Create a meal plan</button>
         </section>
         <section class="hero-section">
             <div class="hero-background-image">
@@ -24,9 +26,20 @@
             </div>
             <div>
                 <p>Maintaining an overall health and well-being is easier done with NutriPlan, the SEARCH stops here</p>
-                <img src="/images/nutriImage1.jpg" alt="A descriptive image of nutrition" class="heroImage">
+                <img src="images/nutriImage1.jpg" alt="A descriptive image of nutrition" class="heroImage">
             </div>
+        </section>
+        <section class="mealPlanForm" id="mealPlanForm">
+            <form action="" method="get" id="inputForm">
+                <label for="mealName">INPUT A MEAL</label>
+                <input required type="text" placeholder="" id="mealName" name="mealName">
+                <label for="mealDescription">MEAL DESCRIPTION</label>
+                <textarea name="" id="mealDescription" name="mealDescription" placeholder="Can you give a description about the meal?"></textarea>
+                <button type="submit" value="submit" id="submitMeal">Submit</button>
+            </form>
+            <div id="showMealDetail">MEAL DETAILS</div>
         </section>
     </div>
 </body>
 </html>
+<script src="main.js"></script>
