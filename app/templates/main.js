@@ -5,19 +5,18 @@
 const mealFormDirection = document.getElementById("mealPlanDirection");
 const mealPlanForm = document.getElementById("mealPlanForm");
 
-mealFormDirection.addEventListener('click', function(){
-    smoothScroll()
-})
+mealFormDirection.addEventListener("click", function () {
+  smoothScroll();
+});
 
-const smoothScroll = () =>{
-    targetOffset = mealPlanForm.offsetTop;
+const smoothScroll = () => {
+  targetOffset = mealPlanForm.offsetTop;
 
-    window.scrollTo({
-        top: targetOffset,
-        behavior: 'smooth'
-    });
-}
-
+  window.scrollTo({
+    top: targetOffset,
+    behavior: "smooth",
+  });
+};
 
 // mealDetail.js
 
@@ -27,45 +26,55 @@ const ShowMealDetail = document.getElementById("showMealDetail");
 
 let storedMeal = [];
 
-InputForm.addEventListener("submit", function(e){
-    e.preventDefault()
+InputForm.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    let mealName = document.querySelector("#inputForm input[name='mealName']").value;
-    let mealDescription = document.querySelector("#inputForm textarea[name='mealDescription']").value;
+  let mealName = document.querySelector(
+    "#inputForm input[name='mealName']"
+  ).value;
+  let mealDescription = document.querySelector(
+    "#inputForm textarea[name='mealDescription']"
+  ).value;
 
-    const mealFormData = {
-        mealName,
-        mealDescription
-    }
+  const mealFormData = {
+    mealName,
+    mealDescription,
+  };
 
-    storedMeal.push(mealFormData)
-    localStorage.setItem('mealFormData', JSON.stringify(storedMeal))
+  storedMeal.push(mealFormData);
+  localStorage.setItem("mealFormData", JSON.stringify(storedMeal));
 
-    localStorage.setItem('mealFormData', JSON.stringify(mealFormData));
-
-    InputForm.reset()
+  InputForm.reset();
 });
 
-ShowMeal.addEventListener('click', function(e){
-    e.preventDefault()
-    ShowMealDetail.innerHTML = ''
-    smoothScroll()
+ShowMeal.addEventListener("click", function (e) {
+  e.preventDefault();
+  ShowMealDetail.innerHTML = "";
+  smoothScroll();
 
-    if(storedMeal.length){
-        for (const meal of storedMeal){
-            const eachMeal = document.createElement('li');
-            eachMeal.textContent = `Name: ${meal.mealName}, 
-            Description: ${meal.mealDescription}`;
-            ShowMealDetail.appendChild(eachMeal);
-        }
-    }else{
-        ShowMealDetail.textContent = "you don't have any stored meal yet"
+  if (storedMeal.length) {
+    for (const meal of storedMeal) {
+      const eachMeal = document.createElement("li");
+      const viewDescription = document.createElement("a");
+      viewDescription.href = "#";
+      viewDescription.textContent = "view";
+      viewDescription.addEventListener("click", function (e) {
+        e.preventDefault();
+        mealPlanDisplay(meal.mealDescription);
+        // toggleCloseBtn();
+      });
+      eachMeal.textContent = `Name: ${meal.mealName} `;
+      eachMeal.appendChild(viewDescription);
+      ShowMealDetail.appendChild(eachMeal);
     }
-})
-function mealPlanDisplay() {
-    const storedMealData = JSON.parse(localStorage.getItem('mealFormData'));
-    const mealDescription = storedMealData.mealDescription;
-    console.log(mealDescription)
+  } else {
+    ShowMealDetail.textContent = "You don't have any stored meal yet";
+  }
+});
+function mealPlanDisplay(mealDescription) {
+  viewDescriptionBox.textContent = mealDescription;
 }
 
-mealPlanDisplay()
+const viewDescriptionBox = document.getElementById("viewDescriptionBox");
+const descCloseBtn = document.getElementById("descCloseBtn");
+// ]Next working on the edit description function
