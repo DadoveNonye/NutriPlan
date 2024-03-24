@@ -96,14 +96,16 @@ nav > ul > li:hover::after {
   text-align: center;
 }
 
-.hero-background-image button {
+.hero-background-image button,
+#edit {
   padding: 20px;
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.hero-background-image button:hover {
+.hero-background-image button:hover,
+#edit {
   background-color: #ccff99;
   transition: background-color 0.5s ease-in-out;
   /* color: white; */
@@ -162,7 +164,8 @@ nav > ul > li:hover::after {
   height: 150px;
 }
 
-.mealPlanForm button {
+.mealPlanForm button,
+#edit {
   width: 100%;
   padding: 10px;
   border: none;
@@ -172,13 +175,27 @@ nav > ul > li:hover::after {
   cursor: pointer;
 }
 
-.mealPlanForm button:hover {
+.mealPlanForm button:hover,
+#edit:hover {
   background-color: #0056b3;
 }
 
-#viewDescriptionBox {
+#devBox {
+  /* display: flex; */
+  /* justify-content: space-around; */
+  width: 300px;
+  height: 200px;
+  border: 1px solid burlywood;
+  position: relative;
 }
 
-/* #descCloseBtnBox{
-    border: 2px solid red;
-} */
+#descCloseBtnBox #edit {
+  width: 20%;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+}
+
+#viewDescriptionBox {
+  margin-top: 50px;
+}

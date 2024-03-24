@@ -4,6 +4,8 @@
 // inputForm.js
 const mealFormDirection = document.getElementById("mealPlanDirection");
 const mealPlanForm = document.getElementById("mealPlanForm");
+const descCloseBtn = document.getElementById("descCloseBtn");
+const editButton = document.getElementById("edit");
 
 mealFormDirection.addEventListener("click", function () {
   smoothScroll();
@@ -61,7 +63,12 @@ ShowMeal.addEventListener("click", function (e) {
       viewDescription.addEventListener("click", function (e) {
         e.preventDefault();
         mealPlanDisplay(meal.mealDescription);
-        // toggleCloseBtn();
+
+        editButton.addEventListener("click", function () {
+          const mealIndex = storedMeal.indexOf(meal);
+          editDescription(mealIndex);
+          console.log(mealIndex);
+        });
       });
       eachMeal.textContent = `Name: ${meal.mealName} `;
       eachMeal.appendChild(viewDescription);
@@ -76,5 +83,21 @@ function mealPlanDisplay(mealDescription) {
 }
 
 const viewDescriptionBox = document.getElementById("viewDescriptionBox");
-const descCloseBtn = document.getElementById("descCloseBtn");
-// ]Next working on the edit description function
+
+function editDescription(mealIndex) {
+  if (mealIndex >= 0 && mealIndex < storedMeal.length) {
+    const mealToEdit = storedMeal[mealIndex];
+    const mealNameInput = document.querySelector(
+      "#inputForm input[name='mealName']"
+    );
+    const mealDescriptionInput = document.querySelector(
+      "#inputForm textarea[name='mealDescription']"
+    );
+
+    mealNameInput.value = mealToEdit.mealName;
+    mealDescriptionInput.value = mealToEdit.mealDescription;
+    mealDescriptionInput.focus();
+  } else {
+    console.log("invalid meal index");
+  }
+}
