@@ -9,6 +9,13 @@ from app.auth.emails import send_password_reset_email
 import sqlalchemy as sa
 from urllib.parse import urlsplit
 
+@bp.route('/')
+@bp.route('/index', methods=['GET', 'POST'], strict_slashes=False)
+def index():
+    """ Home page."""
+    return render_template('index.html', title='Home')
+
+
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
