@@ -5,7 +5,14 @@
 const mealFormDirection = document.getElementById("mealPlanDirection");
 const mealPlanForm = document.getElementById("mealPlanForm");
 const descCloseBtn = document.getElementById("descCloseBtn");
-const editButton = document.getElementById("edit");
+const confirmDeleteButton = document.getElementById("confirmDeleteButton");
+const deleteConfirmationModal = document.getElementById(
+  "deleteConfirmationModal"
+);
+const cancelDeleteButton = document.getElementById("cancelDeleteButton");
+const InputForm = document.getElementById("inputForm");
+const ShowMeal = document.getElementById("showMeal");
+const ShowMealDetail = document.getElementById("showMealDetail");
 
 mealFormDirection.addEventListener("click", function () {
   smoothScroll();
@@ -21,10 +28,6 @@ const smoothScroll = () => {
 };
 
 // mealDetail.js
-
-const InputForm = document.getElementById("inputForm");
-const ShowMeal = document.getElementById("showMeal");
-const ShowMealDetail = document.getElementById("showMealDetail");
 
 let storedMeal = [];
 
@@ -49,41 +52,82 @@ InputForm.addEventListener("submit", function (e) {
   InputForm.reset();
 });
 
+confirmDeleteButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  deleteConfirmationModal.style.display = "none";
+  const mealIndex = parseInt(
+    deleteConfirmationModal.getAttribute("data-meal-index")
+  );
+  deleteMeal(mealIndex);
+
+  console.log(mealIndex);
+});
+
 ShowMeal.addEventListener("click", function (e) {
   e.preventDefault();
   ShowMealDetail.innerHTML = "";
   smoothScroll();
 
   if (storedMeal.length) {
-    for (const meal of storedMeal) {
+    for (let i = 0; i < storedMeal.length; i++) {
+      const meal = storedMeal[i];
       const eachMeal = document.createElement("li");
       const viewDescription = document.createElement("a");
+      const editButton = document.createElement("button");
+      const deleteButton = document.createElement("button");
+
+      editButton.textContent = "Edit";
+      deleteButton.textContent = "Delete";
+      editButton.classList.add("edit-btn");
+      deleteButton.classList.add("delete-btn");
+
       viewDescription.href = "#";
-      viewDescription.textContent = "view";
+      viewDescription.textContent = "View";
+
+      // Set data attributes to store the index of the meal
+      editButton.setAttribute("data-meal-index", i);
+      deleteButton.setAttribute("data-meal-index", i);
+
+      // Add event listener to the edit button
+      editButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        const mealIndex = parseInt(editButton.getAttribute("data-meal-index"));
+        editDescription(mealIndex);
+      });
+
+      // Add event listener to the delete button
+      deleteButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        const mealIndex = parseInt(
+          deleteButton.getAttribute("data-meal-index")
+        );
+        deleteConfirmationModal.style.display = "block";
+        deleteConfirmationModal.setAttribute("data-meal-index", mealIndex);
+      });
+
       viewDescription.addEventListener("click", function (e) {
         e.preventDefault();
         mealPlanDisplay(meal.mealDescription);
-
-        editButton.addEventListener("click", function () {
-          const mealIndex = storedMeal.indexOf(meal);
-          editDescription(mealIndex);
-          console.log(mealIndex);
-        });
       });
+
       eachMeal.textContent = `Name: ${meal.mealName} `;
       eachMeal.appendChild(viewDescription);
+      eachMeal.appendChild(editButton);
+      eachMeal.appendChild(deleteButton);
       ShowMealDetail.appendChild(eachMeal);
     }
   } else {
     ShowMealDetail.textContent = "You don't have any stored meal yet";
   }
 });
+
 function mealPlanDisplay(mealDescription) {
   viewDescriptionBox.textContent = mealDescription;
 }
 
 const viewDescriptionBox = document.getElementById("viewDescriptionBox");
 
+// edit.js
 function editDescription(mealIndex) {
   if (mealIndex >= 0 && mealIndex < storedMeal.length) {
     const mealToEdit = storedMeal[mealIndex];
@@ -101,3 +145,28 @@ function editDescription(mealIndex) {
     console.log("invalid meal index");
   }
 }
+
+// delete.js
+
+function deleteMeal(mealIndex) {
+  storedMeal.splice(mealIndex, 1);
+  localStorage.setItem("mealFormData", JSON.stringify(storedMeal));
+  viewDescriptionBox.textContent = "";
+}
+
+// const deleteConfirmationModal = document.getElementById(
+//   "deleteConfirmationModal"
+// );
+// const cancelDeleteButton = document.getElementById("cancelDeleteButton");
+
+deleteButtonDialog.addEventListener("click", () => {
+  deleteConfirmationModal.style.display = "block";
+});
+
+cancelDeleteButton.addEventListener("click", () => {
+  deleteConfirmationModal.style.display = "none";
+});
+
+confirmDeleteButton.addEventListener("click", () => {
+  deleteConfirmationModal.style.display = "none";
+});

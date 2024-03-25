@@ -22,7 +22,7 @@
         <section class="hero-section">
             <div class="hero-background-image">
                 <h1>FINALLY! YOUR <br class="nutriBR">NUTRIPLANS </br>ARE TAILORED TO YOUR NEEDS.</h1>
-                <button>Let's chat</button>
+                <button class="chat">Let's chat</button>
             </div>
             <div>
                 <p>Maintaining an overall health and well-being is easier done with NutriPlan, the SEARCH stops here</p>
@@ -40,11 +40,20 @@
             <div id="showMealDetail">MEAL DETAILS</div>
             <div id="devBox">
                 <div id="descCloseBtnBox" class="hidden">
-                    <!-- <button id="descCloseBtn">close</button> -->
-                    <button id="edit">Edit</button>
+                    <!-- <button id="deleteMeal">Delete</button>
+                    <button id="edit">Edit</button> -->
                     <p id="viewDescriptionBox"></p>
                 </div>
             </div>
+        </section>
+        <section>
+            <div id="deleteConfirmationModal" class="modal">
+                <div class="modal-content">
+                  <p>Are you sure you want to delete this meal?</p>
+                  <button id="confirmDeleteButton">Confirm</button>
+                  <button id="cancelDeleteButton">Cancel</button>
+                </div>
+              </div>
         </section>
     </div>
 </body>
