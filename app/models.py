@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """This module contains the models for NutriPlan application."""
 
-from app import db
+from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from typing import Optional
 import sqlalchemy as sa
 import sqlalchemy.orm as so
+from flask_login import UserMixin
 
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     """ This class represents the user model. """
     id: so.Mapped[int] = so.mapped_column(primary_key=True)
     username: so.Mapped[str] = so.mapped_column(sa.String(255), index=True,
@@ -30,6 +31,10 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
+    
+@login_manager.user_loader
+def load_user(id):
+    return db.session.get(User, int(id))
         
 class MealPlan(db.Model):
     """ This class represents the meal plan model. """
@@ -41,6 +46,13 @@ class MealPlan(db.Model):
     meals: so.WriteOnlyMapped['Meal'] = so.relationship(backref='meal_plan',
                                                         lazy=True)    
 
+    def serialize(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description
+        }
+    
     def __repr__(self):
         return '<MealPlan {}>'.format(self.name)
    
