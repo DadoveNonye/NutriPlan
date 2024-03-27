@@ -159,9 +159,9 @@ function deleteMeal(mealIndex) {
 // );
 // const cancelDeleteButton = document.getElementById("cancelDeleteButton");
 
-deleteButtonDialog.addEventListener("click", () => {
-  deleteConfirmationModal.style.display = "block";
-});
+// deleteButtonDialog.addEventListener("click", () => {
+//   deleteConfirmationModal.style.display = "block";
+// });
 
 cancelDeleteButton.addEventListener("click", () => {
   deleteConfirmationModal.style.display = "none";

@@ -13,6 +13,7 @@
   right: 0%;
   top: 0%;
   left: 0%;
+  flex-direction: row;
 }
 #navbar .logo img {
   max-width: 100%;
@@ -33,6 +34,9 @@ nav > ul {
   align-items: center;
   align-content: center;
   margin-right: 10px;
+  text-decoration: none;
+}
+a {
   text-decoration: none;
 }
 
@@ -111,12 +115,30 @@ nav > ul > li:hover::after {
   color: #ccff99;
 }
 
-#mealPlanDirection {
+/* #mealPlanDirection {
   height: 80px;
   width: 100px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
+} */
+
+.mlogin {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #ccff99;
+  outline: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: 1.5s;
+}
+.mlogin:hover {
+  background-color: #ccff99;
+  color: #000;
 }
 
 .mealPlanForm {
@@ -239,4 +261,87 @@ nav > ul > li:hover::after {
 
 .modal-content button {
   margin: 0 5px;
+}
+
+body .container {
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  margin-right: 10px;
+}
+
+.container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.container button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.container button:hover {
+  opacity: 0.8;
+}
+
+.container a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.close-outline {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 30px;
+  color: #999;
+  cursor: pointer;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon input[type="text"] {
+  padding-left: 5px;
+}
+
+.input-icon .icon {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-80%);
+  pointer-events: none;
 }
