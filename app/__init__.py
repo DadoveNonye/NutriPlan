@@ -10,7 +10,7 @@ db = SQLAlchemy()
 migrate = Migrate()
 mail = Mail()
 login_manager = LoginManager()
-login.login_view = 'auth.login'
+login_manager.login_view = 'login'
 
 def create_app(config_class=Config):
     app = Flask(__name__)
