@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """This module contains the models for NutriPlan application."""
 
-from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from typing import Optional
 import sqlalchemy as sa
 import sqlalchemy.orm as so
 from flask_login import UserMixin
+from app import db, login_manager
 
 
 class User(UserMixin, db.Model):
@@ -92,6 +92,8 @@ class FoodIntake(db.Model):
                                           index=True, nullable=False)
     date: so.Mapped[sa.Date] = so.mapped_column(sa.Date, nullable=False)
     quantity: so.Mapped[int] = so.mapped_column(sa.Integer, nullable=False)
+    meal_id: so.Mapped[Optional[int]] = so.mapped_column(sa.ForeignKey(Meal.id),
+                                                index=True)
 
     def __repr__(self):
         return '<FoodIntake {}>'.format(self.id)
