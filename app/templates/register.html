@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-      <a href="index.html">
+        <a href="{{ url_for('auth.index')}}" title="Go to homepage">Homepage</a>
         <ion-icon name="close-outline" class="close-outline"></ion-icon>
       </a>
 
@@ -33,6 +33,7 @@
         <div>
           <label for="email">Password:</label>
           <div class="input-icon">
+            <label for="password">Password:</label>
             <input type="text" id="password" name="password" required />
             <span class="icon"
               ><ion-icon name="lock-closed-outline"></ion-icon
@@ -40,7 +41,7 @@
           </div>
         </div>
         <button type="submit">Register</button>
-        <p>Already have an account? <a href="login.html">Login Here</a></p>
+        <p>Already have an account? <a href="{{ url_for('auth.login') }}">Login Here</a></p>
       </form>
     </div>
   </body>
