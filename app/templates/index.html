@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriPlan</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     
 </head>
 <body>
     <div id="main">
         <section id="navbar">
-            <div class="logo"><a href=""><img src="images/NutriPlanLogo.jpeg" alt="Nutri Plan logo"></a></div>
+            <div class="logo"><a href=""><img src="static/images/NutriPlanLogo.jpeg" alt="Nutri Plan logo"></a></div>
             <nav><ul>
                 <li><a href="" id="showMeal">MY MEAL</a></li>
                 <li><a href="">RESOURCES</a></li>
                 <li><a href="">PAYMENT</a></li>
                 <li><a href="">ABOUT</a></li>
             </ul></nav>
-            <button class="mlogin" id="mealPlanDirection">
+            <button class="mlogin" id="mealPlanDirection">MY MEAL</button>
                 <a href="{{ url_for('auth.login') }}">Login Here</a></button>
         </section>
         <section class="hero-section">
