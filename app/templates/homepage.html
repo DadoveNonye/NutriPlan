@@ -8,6 +8,10 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/homepage.css') }}"
     />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
   </head>
   <body>
     <div class="homepage">
@@ -19,17 +23,29 @@
         </div>
         <nav>
           <ul>
-            <li><a href="{{ url_for('auth.home') }}">HOME</a></li>
-            <li><a href="">FOOD</a></li>
-            <li><a href="">INTAKE</a></li>
-            <li><a href="" id="showMeal">MY MEAL</a></li>
+            <li><a href="{{ url_for('auth.home') }}"></a></li>
+            <!-- <li><a href="">FOOD</a></li>
+            <li><a href="" id="showMeal">MY MEAL</a></li> -->
+            <!-- <li><p><a href="{{ url_for('auth.register') }}">REGISTER</a></p></li> -->
           </ul>
         </nav>
+        <button class="mlogin">
+            <a href="{{ url_for('auth.register') }}">REGISTER</a>
+        </button>
         <button class="mlogin" id="mealPlanDirection">
           <a href="{{ url_for('auth.login') }}">Login Here</a>
         </button>
       </section>
     </div>
+    <section class="hero-section home-page-hero">
+        <div class="hero-background-image">
+            <h1>FINALLY! YOUR <br class="nutriBR">NUTRIPLANS </br>ARE TAILORED TO YOUR NEEDS.</h1>
+            <button class="chat">Let's chat</button>
+        </div>
+        <div>
+            <p>Maintaining an overall health and well-being is easier done with NutriPlan, the SEARCH stops here</p>
+        </div>
+    </section>
     <section></section>
   </body>
 </html>

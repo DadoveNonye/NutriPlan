@@ -1,6 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .homepage #navbar {
   background-image: url("../images/nutriimage3.jpeg");
-  border: 2px solid red;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 100;
+  border: none;
 }
 .homepage #navbar .logo img {
   max-width: 100%;
@@ -8,6 +17,35 @@
   border-radius: 10px;
   margin-left: 10px;
 }
-body {
-  border: 2px solid red;
+.home-page-hero {
+  background-image: url("../images/nutriimage4.jpeg");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page-hero:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.home-page-hero div {
+  position: relative;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.home-page-hero div h1 {
+  color: black;
 }

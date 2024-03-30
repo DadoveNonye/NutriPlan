@@ -11,7 +11,7 @@
 <body>
     <div id="main">
         <section id="navbar">
-            <div class="logo"><a href=""><img src="static/images/NutriPlanLogo.jpeg" alt="Nutri Plan logo"></a></div>
+            <div class="logo"><a href="{{ url_for('auth.home') }}"><img src="static/images/NutriPlanLogo.jpeg" alt="Nutri Plan logo"></a></div>
             <nav><ul>
                 <li><a href="{{ url_for('auth.home')}}">HOME</a></li>
                 <li><a href="">FOOD</a></li>
