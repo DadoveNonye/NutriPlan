@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
-   
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login Page</title>
+     
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-  </head>
-  <body>
-    <div class="container">
-    
-        <ion-icon name="close-outline" class="close-outline"></ion-icon>
-      </a>
-      <h1>Login</h1>
-      <form action="#">
-        <div>
-          <label for="username">Username:</label>
-          <div class="input-icon">
-            <input type="text" id="username" name="username" required placeholder="Username" />
-            <span class="icon"
-              ><ion-icon name="person-outline"></ion-icon
-            ></span>
-          </div>
+    </head>
+    <body>
+        <div class="container">
+        
+                <ion-icon name="close-outline" class="close-outline"></ion-icon>
+            </a>
+            <h1>Login</h1>
+            <form action=="" enctype="multipart/form-data" method="post">
+                <div>
+                    <label for="username">Username:</label>
+                    <div class="input-icon">
+                        {{ form.hidden_tag() }}
+                        {{ form.username(size=20, required="required") }}
+                        <span class="icon"
+                            ><ion-icon name="person-outline"></ion-icon
+                        ></span>
+                    </div>
+                </div>
+                <div>
+                    
+                    <div class="input-icon">
+                        <label for="password">Password:</label>
+                        {{ form.password(size=20, required="required") }}
+                        <span class="icon"
+                            ><ion-icon name="lock-closed-outline"></ion-icon
+                        ></span>
+                    </div>
+                </div>
+                
+                <button type="submit">Login</button>
+                <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+                <p>Don't have an account? <a href="{{ url_for('auth.register') }}">Register Here</a></p>
+                <p><a href="{{ url_for('auth.reset_password_request') }}">Forget password </a></p>
+                <p><a href="{{ url_for('auth.index')}}" title="Go to homepage">Back to homepage</a></p>
+            </form>
         </div>
-        <div>
-          
-          <div class="input-icon">
-            <label for="password">Password:</label>
-            <input type="text" id="password" name="password" required placeholder="Enter your password" />
-            <span class="icon"
-              ><ion-icon name="lock-closed-outline"></ion-icon
-            ></span>
-          </div>
-        </div>
-        <button type="submit">Login</button>
-        <p>Don't have an account? <a href="{{ url_for('auth.register') }}">Register Here</a></p>
-        <p><a href="{{ url_for('auth.reset_password_request') }}">Forget password </a></p>
-        <p><a href="{{ url_for('auth.index')}}" title="Go to homepage">Back to homepage</a></p>
-      </form>
-    </div>
-  </body>
+    </body>
 </html>
 <script
-  type="module"
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
 ></script>
 <script
-  nomodule
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
 ></script>

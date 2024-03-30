@@ -32,7 +32,7 @@ def login():
         if not next_page or urlsplit(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
-    return render_template('login.html', form=form)
+    return render_template('login.html', title=login, form=form)
 
 @bp.route('/logout')
 def logout():
