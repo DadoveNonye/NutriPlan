@@ -13,10 +13,10 @@
         <section id="navbar">
             <div class="logo"><a href=""><img src="static/images/NutriPlanLogo.jpeg" alt="Nutri Plan logo"></a></div>
             <nav><ul>
+                <li><a href="{{ url_for('auth.homepage')}}">HOME</a></li>
+                <li><a href="">FOOD</a></li>
+                <li><a href="">INTAKE</a></li>
                 <li><a href="" id="showMeal">MY MEAL</a></li>
-                <li><a href="">RESOURCES</a></li>
-                <li><a href="">PAYMENT</a></li>
-                <li><a href="">ABOUT</a></li>
             </ul></nav>
                <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.login') }}">Login Here</a></button>
         </section>

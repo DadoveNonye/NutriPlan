@@ -115,14 +115,6 @@ nav > ul > li:hover::after {
   color: #ccff99;
 }
 
-/* #mealPlanDirection {
-  height: 80px;
-  width: 100px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-} */
-
 .mlogin {
   width: 130px;
   height: 50px;
@@ -217,7 +209,7 @@ nav > ul > li:hover::after {
   margin-left: 5px;
 }
 
-.delete-btn {
+/* .delete-btn {
   background-color: red;
   color: white;
   border: none;
@@ -225,7 +217,7 @@ nav > ul > li:hover::after {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 5px;
-}
+} */
 
 .edit-btn {
   padding: 10px;
