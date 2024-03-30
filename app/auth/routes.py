@@ -15,6 +15,10 @@ def index():
     """ Home page."""
     return render_template('index.html', title='Home')
 
+@bp.route('/home', methods=['GET', 'POST'], strict_slashes=False)
+def home():
+    """ Home page."""
+    return render_template('homepage.html', title='Home')
 
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
