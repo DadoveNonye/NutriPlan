@@ -1,10 +1,11 @@
-from flask import Blueprint, request, jsonify
+from flask import request, jsonify
 from app import db
 from app.models import MealPlan, Meal
 import sqlalchemy.orm as so
 from app.api import bp
 from flask_login import login_required, current_user
-from app.models import FoodItem
+from app.models import FoodItem, FoodIntake
+from flask_restful import reqparse
 
 
 
@@ -12,8 +13,8 @@ from app.models import FoodItem
 @login_required
 def create_meal_plan():
     data = request.get_json()
-    name = data.get('name')
-    description = data.get('description')
+    name = data.get('mealName')
+    description = data.get('mealDescription')
 
     meal_plan = MealPlan(name=name, description=description)
     db.session.add(meal_plan)
@@ -60,46 +61,46 @@ def get_meal_plans():
 
 
 
-    @bp.route('/mealplans/<int:id>', methods=['PUT'])
-    @login_required
-    def update_meal_plan(id):
-        meal_plan = MealPlan.query.get(id)
+@bp.route('/mealplans/<int:id>', methods=['PUT'])
+@login_required
+def update_meal_plan(id):
+    meal_plan = MealPlan.query.get(id)
 
-        if meal_plan is None:
-            return jsonify({'error': 'Meal plan not found'}), 404
+    if meal_plan is None:
+        return jsonify({'error': 'Meal plan not found'}), 404
 
-        parser = reqparse.RequestParser()
-        parser.add_argument('name', required=False)
-        parser.add_argument('description', required=False)
-        args = parser.parse_args()
+    parser = reqparse.RequestParser()
+    parser.add_argument('name', required=False)
+    parser.add_argument('description', required=False)
+    args = parser.parse_args()
 
-        meal_plan.name = args.get('name', meal_plan.name)  # Use existing name if not provided
-        meal_plan.description = args.get('description', meal_plan.description)
+    meal_plan.name = args.get('name', meal_plan.name)  # Use existing name if not provided
+    meal_plan.description = args.get('description', meal_plan.description)
 
-        db.session.commit()
+    db.session.commit()
 
-        return jsonify({'message': 'Meal plan updated successfully'}), 200
-
-
+    return jsonify({'message': 'Meal plan updated successfully'}), 200
 
 
-        @bp.route('/mealplans/<int:id>', methods=['DELETE'])
-        @login_required
-        def delete_meal_plan(id):
-            meal_plan = MealPlan.query.get(id)
 
-            if meal_plan is None:
-                return jsonify({'error': 'Meal plan not found'}), 404
 
-            # Check if there are associated meals
-            meals = Meal.query.filter_by(meal_plan_id=id).all()
-            if meals:
-                return jsonify({'error': 'Cannot delete meal plan with associated meals'}), 400
+@bp.route('/mealplans/<int:id>', methods=['DELETE'])
+@login_required
+def delete_meal_plan(id):
+    meal_plan = MealPlan.query.get(id)
 
-            db.session.delete(meal_plan)
-            db.session.commit()
+    if meal_plan is None:
+        return jsonify({'error': 'Meal plan not found'}), 404
 
-            return jsonify({'message': 'Meal plan deleted successfully'}), 200
+    # Check if there are associated meals
+    meals = Meal.query.filter_by(meal_plan_id=id).all()
+    if meals:
+        return jsonify({'error': 'Cannot delete meal plan with associated meals'}), 400
+
+    db.session.delete(meal_plan)
+    db.session.commit()
+
+    return jsonify({'message': 'Meal plan deleted successfully'}), 200
 
 
 @bp.route('/food-items', methods=['GET'])

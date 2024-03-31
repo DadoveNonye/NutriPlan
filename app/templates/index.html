@@ -11,7 +11,7 @@
 <body>
     <div id="main">
         <section id="navbar">
-            <div class="logo"><a href="{{ url_for('auth.home') }}"><img src="static/images/NutriPlanLogo.jpeg" alt="Nutri Plan logo"></a></div>
+            <div class="logo"><a href="{{ url_for('auth.home') }}"><img src="static/images/NutriPlan_logo_without_BG.png" alt="Nutri Plan logo"></a></div>
             <nav><ul>
                 <li><a href="{{ url_for('auth.home')}}">HOME</a></li>
                 <li><a href="{{ url_for('api.get_meal_plans')}}">FOOD</a></li>
@@ -32,11 +32,39 @@
         </section>
         <section class="mealPlanForm" id="mealPlanForm">
             <form action="" method="get" id="inputForm">
-                <label for="mealName">INPUT A MEAL</label>
-                <input required type="text" placeholder="" id="mealName" name="mealName">
+                <label for="meal-plan-name">INPUT A MEAL</label>
+                <input required type="text" placeholder="" id="meal-plan-name" name="mealName">
                 <label for="mealDescription">MEAL DESCRIPTION</label>
-                <textarea id="mealDescription" name="mealDescription" placeholder="Can you give a description about the meal?"></textarea>
+                <textarea id="meal-plan-description" name="mealDescription" placeholder="Can you give a description about the meal?"></textarea>
                 <button type="submit" value="submit" id="submitMeal">Submit</button>
+                <button id="create-mealplan-btn">Create Meal Plan</button>
+
+<script>
+const createMealPlanBtn = document.getElementById('create-mealplan-btn');
+
+createMealPlanBtn.addEventListener('click', async () => {
+  const name = document.getElementById('meal-plan-name').value;
+  const description = document.getElementById('meal-plan-description').value;
+
+  const response = await fetch('/mealplans', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, description })
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    console.error('Error creating meal plan:', errorData.error);
+    // Display error message to the user
+  } else {
+    const data = await response.json();
+    console.log('Meal plan created:', data);
+    window.alert('Meal plan created successfully!');
+    // Update UI to show success message or redirect to view the new plan
+  }
+});
+</script>
+
             </form>
             <div id="showMealDetail">MEAL DETAILS</div>
             <div id="devBox">
