@@ -32,17 +32,17 @@
         </section>
         <section class="mealPlanForm" id="mealPlanForm">
             <form action="" method="get" id="inputForm">
-                <label for="meal-plan-name">INPUT A MEAL</label>
-                <input required type="text" placeholder="" id="meal-plan-name" name="mealName">
+                <label for="mealName">INPUT A MEAL</label>
+                <input required type="text" placeholder="" id="mealName" name="mealName">
                 <label for="mealDescription">MEAL DESCRIPTION</label>
-                <textarea id="meal-plan-description" name="mealDescription" placeholder="Can you give a description about the meal?"></textarea>
+                <textarea id="mealDescription" name="mealDescription" placeholder="Can you give a description about the meal?"></textarea>
                 <button type="submit" value="submit" id="submitMeal">Submit</button>
-                <button id="create-mealplan-btn">Create Meal Plan</button>
+                <button type="button" id="create-mealplan-btn">Create Meal Plan</button>
 
 <script>
 const createMealPlanBtn = document.getElementById('create-mealplan-btn');
 
-createMealPlanBtn.addEventListener('click', async () => {
+createMealPlanBtn.addEventListener('click', async()=>{
   const name = document.getElementById('meal-plan-name').value;
   const description = document.getElementById('meal-plan-description').value;
 
@@ -59,7 +59,6 @@ createMealPlanBtn.addEventListener('click', async () => {
   } else {
     const data = await response.json();
     console.log('Meal plan created:', data);
-    window.alert('Meal plan created successfully!');
     // Update UI to show success message or redirect to view the new plan
   }
 });

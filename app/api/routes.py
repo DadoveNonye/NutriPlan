@@ -1,4 +1,4 @@
-from flask import request, jsonify
+from flask import Blueprint, request, jsonify
 from app import db
 from app.models import MealPlan, Meal
 import sqlalchemy.orm as so
