@@ -50,17 +50,17 @@
           <div class="input-icon">
             <label for="password">Password:</label>
             <input
-              type="text"
+              type="password"
               id="password"
               name="password"
               required
               placeholder="Enter Your Password"
             />
-            <span class="icon"
-              ><ion-icon name="lock-closed-outline"></ion-icon
-            ></span>
-          </div>
+            <span class="eye"
+            ><ion-icon id="icon" name="eye-outline"></ion-icon></span>
+            </div>
         </div>
+    
         <button type="submit">Register</button>
         <p>
           Already have an account?
@@ -73,7 +73,22 @@
         </p>
       </form>
     </div>
+   
   </body>
+   <script >
+        var icon = document.getElementById('icon');
+        var  password = document.getElementById('password')
+        icon.addEventListener('click',function(){
+          if (password.type === 'password'){
+            password.type ='text'
+            icon.name="eye-off-outline"
+          }
+          else{
+              password.type ='password'
+            icon.name="eye-outline"
+          }
+        })
+    </script>
 </html>
 <script
   type="module"

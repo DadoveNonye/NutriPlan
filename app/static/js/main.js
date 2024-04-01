@@ -170,3 +170,5 @@ cancelDeleteButton.addEventListener("click", () => {
 confirmDeleteButton.addEventListener("click", () => {
   deleteConfirmationModal.style.display = "none";
 });
+
+

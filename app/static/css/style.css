@@ -356,3 +356,9 @@ form{
   transform: translateY(-80%);
   pointer-events: none;
 }
+.eye {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    visibility: visible;
+}
