@@ -9,12 +9,12 @@
   border: 2px solid #ccff99;
   display: flex;
   justify-content: space-between;
-  position: fixed; 
+  position: fixed;
   right: 0%;
   top: 0%;
   left: 0%;
   flex-direction: row;
-  background-color: white
+  background-color: white;
 }
 #navbar .logo img {
   max-width: 100%;
@@ -23,8 +23,6 @@
   margin-left: 10px;
   /* transform: scale(2.1); */
   /* padding-left: 30px; */
-  
-
 }
 nav {
   position: relative;
@@ -101,7 +99,7 @@ nav > ul > li:hover::after {
 }
 
 .hero-background-image > h1 {
-  text-align: center; 
+  text-align: center;
 }
 
 .hero-background-image .chat {
@@ -214,7 +212,7 @@ nav > ul > li:hover::after {
   margin-left: 5px;
 }
 
-/* .delete-btn {
+.delete-btn {
   background-color: red;
   color: white;
   border: none;
@@ -222,7 +220,7 @@ nav > ul > li:hover::after {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 5px;
-} */
+}
 
 .edit-btn {
   padding: 10px;
@@ -268,9 +266,8 @@ body .container {
   align-items: center;
   min-height: 100vh;
   background-color: #f5f5f5;
-  
 }
-form{
+form {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.724);
   padding: 30px;
   padding-right: 37px;
@@ -357,8 +354,8 @@ form{
   pointer-events: none;
 }
 .eye {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    visibility: visible;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  visibility: visible;
 }

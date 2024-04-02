@@ -57,10 +57,11 @@
               placeholder="Enter Your Password"
             />
             <span class="eye"
-            ><ion-icon id="icon" name="eye-outline"></ion-icon></span>
-            </div>
+              ><ion-icon id="icon" name="eye-outline"></ion-icon
+            ></span>
+          </div>
         </div>
-    
+
         <button type="submit">Register</button>
         <p>
           Already have an account?
@@ -73,23 +74,22 @@
         </p>
       </form>
     </div>
-   
   </body>
-   <script >
-        var icon = document.getElementById('icon');
-        var  password = document.getElementById('password')
-        icon.addEventListener('click',function(){
-          if (password.type === 'password'){
-            password.type ='text'
-            icon.name="eye-off-outline"
-          }
-          else{
-              password.type ='password'
-            icon.name="eye-outline"
-          }
-        })
-    </script>
+  <script>
+    let icon = document.getElementById("icon");
+    let password = document.getElementById("password");
+    icon.addEventListener("click", function () {
+      if (password.type === "password") {
+        password.type = "text";
+        icon.name = "eye-off-outline";
+      } else {
+        password.type = "password";
+        icon.name = "eye-outline";
+      }
+    });
+  </script>
 </html>
+
 <script
   type="module"
   src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
