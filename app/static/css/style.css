@@ -136,6 +136,7 @@ nav > ul > li:hover::after {
 .mlogin:hover {
   background-color: #ccff99;
   color: #000;
+  transform: scale(1.1);
 }
 
 .mealPlanForm {
@@ -360,5 +361,5 @@ form{
     position: absolute;
     right: 0px;
     top: 50%;
-    visibility: visible;
+    
 }

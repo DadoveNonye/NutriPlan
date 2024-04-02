@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .homepage #navbar {
-  background-image: url("../images/nutriimage3.jpeg");
+  background-image: url("../images/nutriimage4.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -31,15 +31,7 @@
   align-items: center;
 }
 
-.home-page-hero:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  /* background-color: rgba(0, 0, 0, 0.6); */
-}
+
 .home-page-hero div {
   /* position: relative; */
   color: white;
@@ -51,10 +43,46 @@
   color: black;
   backdrop-filter: blur(10px);
 }
-.home-page-hero div  p{
+.home-page-hero div  .p{
     backdrop-filter: blur(10px);
     padding: 20px;
 }
 .home-page-hero div  h1::first-letter{
     font-size: larger;
 }
+.btn a{
+    color: #000;
+    margin: 0%;
+}
+.btn1 a{
+    color: white;
+    margin: 0%;
+}
+.btn{
+    width: 130px;
+    height: 50px;
+    margin-top: 25px;
+  transition: 1.5s;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.btn:hover {
+    transform: scale(1.1);
+}
+.btn1:hover {
+    transform: scale(1.1);
+}
+.btn1{
+    width: 130px;
+    height: 50px;
+    margin-top: 25px;
+  transition: 1.5s;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  border:5px solid white;
+}
+.btt{
+   margin-right: 50px;
+}
+  
