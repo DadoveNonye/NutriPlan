@@ -112,8 +112,8 @@ nav > ul > li:hover::after {
 }
 
 .hero-background-image .chat:hover {
-  background-color: #ccff99;
-  transition: background-color 0.5s ease-in-out;
+  transform: scale(1.1);
+  transition:  0.5s ease-in-out;
 }
 
 .hero-background-image .nutriBR {
@@ -292,7 +292,7 @@ form{
   color: #333;
   margin-right: 10px;
   position: absolute;
-  top: 70px;
+  top: 50px;
 }
 
 .container label {
@@ -357,9 +357,20 @@ form{
   transform: translateY(-80%);
   pointer-events: none;
 }
+.eyel{
+    position: absolute;
+    right: 0px;
+    top: 50%;  
+}
 .eye {
     position: absolute;
     right: 0px;
-    top: 50%;
-    
+    top: 32%;
+     transform: translateY(-80%);
+}
+.eye1{
+    position: absolute;
+    right: 0px;
+    top:72%;
+   
 }

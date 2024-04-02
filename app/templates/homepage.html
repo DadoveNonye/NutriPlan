@@ -34,7 +34,7 @@
             <a href="{{ url_for('auth.register') }}">REGISTER</a>
         </button>
         <button class="btn1" id="mealPlanDirection">
-          <a href="{{ url_for('auth.login') }}">Login Here</a>
+          <a href="{{ url_for('auth.login') }}">Login</a>
         </button>
         </div>
       </section>
@@ -42,16 +42,39 @@
     <section class="hero-section home-page-hero">
         <div class="hero-background-image">
             <h1>FINALLY! YOUR <p class="nutriBR">NUTRIPLANS</p>ARE TAILORED TO YOUR NEEDS.</h1>
-            <button class="chat">Let's chat</button>
+            <button class="chat" style="border: none; "><a href="{{ url_for('auth.login') }}"> Let's chat</a></button>
         </div>
         <div>
             <p class="p">
               Maintaining an overall health and well-being</b>
                 <br>  is easier done with NutriPlan, 
                     the SEARCH stops here</b>
+                    
        </p> 
+       
     </div>
     </section>
-    <section></section>
+  <section>
+    <div id="cards">
+        <div id="card1">
+            <p id="card-text"><ion-icon name="happy-outline"></ion-icon><br>Great diet! great health<br> with NUTRIPLANS .
+               <br> Watch your food <br>intake with us
+            </p>
+        </div>
+        <div id="card1">
+          
+            <p id="card-text"><ion-icon  name="fast-food-outline"></ion-icon> <br> plan your meals with NUTRIPLANS</p>
+        </div>
+       
+    <BR>
+     <div id="card1">
+            <p id="card-text"><ion-icon name="book-outline"></ion-icon><br>
+             safe eating !<br>safe consuming with<br> our NUTRIPLANS APP
+            </p>
+        
+        </div>   </div>                         
+  </section>
   </body>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>

@@ -3,11 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+    background-image: url("../images/nutriimage4.jpeg");
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .homepage #navbar {
-  background-image: url("../images/nutriimage4.jpeg");
-  background-size: cover;
+  /* background-image: url("../images/nutriimage4.jpeg"); */
+  background-color: transparent;
+ /* background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
   z-index: 100;
   border: none;
 }
@@ -18,12 +27,12 @@
   margin-left: 10px;
 }
 .home-page-hero {
-  background-image: url("../images/nutriimage4.jpeg");
-  height: 100vh;
+  /* background-image: url("../images/nutriimage4.jpeg"); */
+  /* height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  position: relative;
+  position: relative; */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -53,10 +62,14 @@
 .btn a{
     color: #000;
     margin: 0%;
+    font-size: 15px;
+    font-family: Impact, sans-serif;
 }
 .btn1 a{
     color: white;
     margin: 0%;
+    font-size:20px;
+    font-weight: 500;
 }
 .btn{
     width: 130px;
@@ -65,6 +78,8 @@
   transition: 1.5s;
   border-radius: 5px;
   margin-right: 10px;
+  border: none;
+  background-color: white;
 }
 .btn:hover {
     transform: scale(1.1);
@@ -85,4 +100,26 @@
 .btt{
    margin-right: 50px;
 }
-  
+#cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 50px;
+}
+#cards #card1{
+    height: 200px;
+   width: 200px;
+   border-radius: 10%;
+   background:  linear-gradient(45deg,#00ff11 0%,#00ff26 50%,white 50%,white 100%);
+   margin: 10px;
+   
+    
+}
+
+     
+
+#card-text{
+    text-align: center;
+    margin-top:20%;
+}
