@@ -15,7 +15,8 @@
       <a href="{{ url_for('auth.home') }}">
         <ion-icon name="close-outline" class="close-outline"></ion-icon>
       </a>
-      <h1>Login</h1><br>
+      <h1>Login</h1>
+      <br />
       <form action="" enctype="multipart/form-data" method="post">
         <div>
           <label for="username">Username:</label>
@@ -66,21 +67,21 @@
     </div>
     
   </body>
-  <script >
-        var icon = document.getElementById('icon');
-        var  password = document.getElementById('password')
-        icon.addEventListener('click',function(){
-          if (password.type === 'password'){
-            password.type ='text'
-            icon.name="eye-off-outline"
-          }
-          else{
-            password.type ='password'
-            icon.name="eye-outline"
-          }
-        })
-    </script>
+  <script>
+    let icon = document.getElementById("icon");
+    let password = document.getElementById("password");
+    icon.addEventListener("click", function () {
+      if (password.type === "password") {
+        password.type = "text";
+        icon.name = "eye-off-outline";
+      } else {
+        password.type = "password";
+        icon.name = "eye-outline";
+      }
+    });
+  </script>
 </html>
+
 <script
   type="module"
   src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

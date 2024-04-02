@@ -59,8 +59,6 @@ confirmDeleteButton.addEventListener("click", (e) => {
     deleteConfirmationModal.getAttribute("data-meal-index")
   );
   deleteMeal(mealIndex);
-
-  console.log(mealIndex);
 });
 
 ShowMeal.addEventListener("click", function (e) {
@@ -170,5 +168,3 @@ cancelDeleteButton.addEventListener("click", () => {
 confirmDeleteButton.addEventListener("click", () => {
   deleteConfirmationModal.style.display = "none";
 });
-
-

@@ -56,7 +56,8 @@
             
             /> 
             <span class="eye"
-            ><ion-icon id="icon" name="eye-outline"></ion-icon></span>
+              ><ion-icon id="icon" name="eye-outline"></ion-icon
+            ></span>
 
             {% for error in form.password.errors %}
                     <small class="form-text text-danger">{{ error }}</small>
@@ -75,9 +76,9 @@
        </ul>
        {% endif %}
            
-            </div>
+          </div>
         </div>
-    
+
         <button type="submit">Register</button>
         <p>
           Already have an account?
@@ -90,37 +91,22 @@
         </p>
       </form>
     </div>
-   
   </body>
-   <script >
-  
-        var icon = document.getElementById('icon');
-        var  password = document.getElementById('password')
-        icon.addEventListener('click',function(){
-          if (password.type === 'password'){
-            password.type ='text'
-            icon.name="eye-off-outline"
-          }
-          else{
-              password.type ='password'
-            icon.name="eye-outline"
-          }
-        })
-
-        var icon1 = document.getElementById('icon1');
-        var  password2 = document.getElementById('password2')
-        icon1.addEventListener('click',function(){
-          if (password2.type === 'password'){
-            password2.type ='text'
-            icon1.name="eye-off-outline"
-          }
-          else{
-              password2.type ='password'
-            icon1.name="eye-outline"
-          }
-        })
-    </script>
+  <script>
+    let icon = document.getElementById("icon");
+    let password = document.getElementById("password");
+    icon.addEventListener("click", function () {
+      if (password.type === "password") {
+        password.type = "text";
+        icon.name = "eye-off-outline";
+      } else {
+        password.type = "password";
+        icon.name = "eye-outline";
+      }
+    });
+  </script>
 </html>
+
 <script
   type="module"
   src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
