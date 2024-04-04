@@ -111,10 +111,9 @@ body{
     height: 200px;
    width: 200px;
    border-radius: 10%;
-   background:  linear-gradient(45deg,#00ff11 0%,#00ff26 50%,white 50%,white 100%);
+   background:  linear-gradient(to left,#00ff11 0%,#00ff26 50%,white 50%,white 100%);
    margin: 10px;
    
-    
 }
 
      
@@ -122,4 +121,5 @@ body{
 #card-text{
     text-align: center;
     margin-top:20%;
+    font-size: 1.2rem;
 }
