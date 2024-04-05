@@ -19,6 +19,7 @@ body{
   background-position: center; */
   z-index: 100;
   border: none;
+  border-bottom: 5px solid #00800038;
 }
 .homepage #navbar .logo img {
   max-width: 100%;
@@ -46,16 +47,17 @@ body{
   display: flex;
   align-items: center;
   
-  
+
   
 }
 .display-image{
   height: 500px;
   width: 50%;
+  border-radius: 20px;
 }
 .home-page-hero div {
   /* position: relative; */
-  color: white;
+  color: black;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 50px;
@@ -64,6 +66,8 @@ body{
 .home-page-hero div h1 {
   color: black;
   backdrop-filter: blur(10px);
+  font-size: 30px;
+  
 }
 .home-page-hero div  .p{
     backdrop-filter: blur(10px);
