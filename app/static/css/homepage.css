@@ -124,8 +124,9 @@ body{
    width: 200px;
    border-radius: 10%;
    background:  #f3efef;
+   
    margin: 10px;
-   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.724);
+   
     
 }
 
@@ -134,6 +135,7 @@ body{
 #card-text{
     text-align: center;
     margin-top:20%;
+    font-size: 1.2rem;
 }
 .extra{
   

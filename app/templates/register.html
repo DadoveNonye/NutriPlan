@@ -103,7 +103,19 @@
         password.type = "password";
         icon.name = "eye-outline";
       }
-    });
+    })
+    let icon1 = document.getElementById("icon1");
+    let password2 = document.getElementById("password2");
+    icon1.addEventListener("click", function () {
+      if (password2.type === "password") {
+        password2.type = "text";
+        icon1.name = "eye-off-outline";
+      } else {
+        password2.type = "password";
+        icon1.name = "eye-outline";
+      }
+    })
+
   </script>
 </html>
 
