@@ -5,11 +5,11 @@
 }
 
 body{
-    background-image: url("../images/nutriimage4.jpeg");
-    
+    /* background-image: url("../images/nutriimage4.jpeg"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 100vh;
 }
 .homepage #navbar {
   /* background-image: url("../images/nutriimage4.jpeg"); */
@@ -39,13 +39,25 @@ body{
   justify-content: center;
   align-items: center;
 }
-
-
+.hero-background-image-home {
+  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.display-image{
+  height: 500px;
+  width: 50%;
+}
 .home-page-hero div {
   /* position: relative; */
   color: white;
   font-size: 2rem;
   font-weight: bold;
+  margin-bottom: 50px;
 
 }
 .home-page-hero div h1 {
@@ -102,24 +114,50 @@ body{
 }
 #cards{
     display: flex;
-    align-items: center;
+    align-items:last baseline;
     justify-content: center;
-
-    margin-top: 50px;
+    
+   margin-top: 50px;
 }
 #cards #card1{
     height: 200px;
    width: 200px;
    border-radius: 10%;
-   background:  linear-gradient(45deg,#00ff11 0%,#00ff26 50%,white 50%,white 100%);
+   background:  #f3efef;
    margin: 10px;
-   
+   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.724);
     
 }
 
-     
+
 
 #card-text{
     text-align: center;
     margin-top:20%;
+}
+.extra{
+  
+  display: flex;
+ align-items: center;
+ justify-content: left;
+}
+.extra1{
+  height: 200px;
+  width: 200px;
+  margin: 30px 30px 40px 40px; 
+  border-radius: 10px;
+}
+
+.extras{
+  
+  display: flex;
+ align-items: center;
+ justify-content: right;
+}
+.extra2{
+  height: 200px;
+  width: 200px;
+  margin: 0px 40px 40px 20px; 
+  border-radius: 10px;
+ 
 }
