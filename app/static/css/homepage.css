@@ -45,7 +45,8 @@ body{
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  
+  
   
 }
 .display-image{

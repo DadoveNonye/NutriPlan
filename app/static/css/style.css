@@ -75,7 +75,7 @@ nav > ul > li:hover::after {
 
 .hero-section {
   display: flex;
-  padding-top: 100px;
+  padding-top: 20px;
 }
 
 .hero-section > div {
