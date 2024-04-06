@@ -17,114 +17,76 @@
         <ion-icon name="close-outline" class="close-outline"></ion-icon>
       </a>
 
-      <!-- <h1>Register</h1>
-      <form action="" enctype="multipart/form-data" method="post">
-        {{ form.hidden_tag() }}
-        <div>
-          <label for="username">Username:</label>
-          <div class="input-icon">
-            <input
-              type="text"
-              id="username"
-              name="username"
-              required
-              
-            />
-            <span class="icon"
-              ><ion-icon name="person-outline"></ion-icon
-            ></span>
-          </div>
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <div class="input-icon">
-            <input
-              type="text"
-              id="email"
-              name="email"
-              required
-            />
-            <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-          </div>
-        </div>
-        <div>
-          <div class="input-icon">
-            <label for="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              required
-            
-            /> 
-            <span class="eye"
-              ><ion-icon id="icon" name="eye-outline"></ion-icon
-            ></span>
-
-            {% for error in form.password.errors %}
-                    <small class="form-text text-danger">{{ error }}</small>
-            {% endfor %}
-           {{ form.password2.label }} {{ form.password2(size=20, required="required") }}</p> 
-            <span class="eye1" ><ion-icon id="icon1" name="eye-outline">
-                
-            </ion-icon></span>
-            {% if form.password2.errors %}
-            
-            
-       <ul class="errors">
-           {% for error in form.password2.errors %}
-               <li>{{ error }}</li>
-           {% endfor %}
-       </ul>
-       {% endif %}
-           
-          </div>
-        </div>
-
-        <button type="submit">Register</button>
-        <p> -->
+      
             <h1>Register</h1>
     <form action="" method="post">
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}<br>
-            {% for error in form.username.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.email.label }}<br>
-            {{ form.email(size=64) }}<br>
-            {% for error in form.email.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}<br>
-            {% for error in form.password.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.password2.label }}<br>
-            {{ form.password2(size=32) }}<br>
-            {% for error in form.password2.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>{{ form.submit() }}</p>
-    </form>
-          Already have an account?
-          <a href="{{ url_for('auth.login') }}">Login Here</a>
-        </p>
-        <p>
-          <a href="{{ url_for('auth.index')}}" title="Go to homepage"
-            >Back to homepage</a
-          >
-        </p>
+        {{ form.hidden_tag() }} 
+        <div>
+          
+              {{ form.username.label }}
+              <div class="input-icon">
+              {{ form.username(size=32) }}
+              <span class="icon"
+              ><ion-icon name="person-outline"></ion-icon
+            ></span>
+
+          </div>
+          </div>
+
+              <!-- {% for error in form.username.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+              {% endfor %}
+           -->
+          <div>
+              {{ form.email.label }}
+              <div class="input-icon">
+              {{ form.email(size=64) }}
+              <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+            </div>
+            </div>
+              <!-- {% for error in form.email.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+              {% endfor %} -->
+
+
+              <div>
+              {{ form.password.label }}
+              <div class="input-icon">
+              {{ form.password(size=32) }}
+              <span class="eye"
+              ><ion-icon id="icon" name="eye-outline"></ion-icon
+            ></span>
+              
+
+              <!-- {% for error in form.password.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+              {% endfor %} -->
+          
+              {{ form.password2.label }}
+              {{ form.password2(size=32) }}
+              <span class="eye1" ><ion-icon id="icon1" name="eye-outline"></ion-icon></span>
+
+              <!-- {% for error in form.password2.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+              {% endfor %} -->
+               
+          </div>
+
+          </div>
+                <div style="text-align: center;"> {{ form.submit() }}</div>
+    
+            Already have an account?
+            <a href="{{ url_for('auth.login') }}">Login Here</a>
+          </p>
+          
+          <p>
+            <a href="{{ url_for('auth.index')}}" title="Go to homepage"
+              >Back to homepage</a
+            > 
+          </p>
+        
       </form>
+      
     </div>
   </body>
   <script>

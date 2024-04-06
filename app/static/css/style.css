@@ -270,9 +270,11 @@ body .container {
 form {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.724);
   padding: 30px;
-  padding-right: 37px;
+  width: 30%;
   border-radius: 10px;
   text-align: center;
+  padding-right: 45px;
+  
 }
 .container {
   background-color: #fff;
@@ -296,9 +298,7 @@ form {
   margin-bottom: 5px;
 }
 
-.container input[type="text"],
-.container input[type="email"],
-.container input[type="password"] {
+#password,#password2,#username,#email{
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -319,7 +319,16 @@ form {
   text-align: center;
   margin-left: 7px;
 }
-
+input[type='submit']{
+  width: 50%;
+  padding: 10px;
+  
+  border: none;
+  background-color: #4caf50;
+  border-radius: 5px;
+  margin: auto;margin-bottom: 10px;
+  
+}
 .container button:hover {
   opacity: 0.8;
 }
@@ -362,7 +371,7 @@ form {
     position: absolute;
     right: 0px;
     top: 32%;
-     transform: translateY(-80%);
+     transform: translateY(-150%);
 }
 .eye1{
     position: absolute;
