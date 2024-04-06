@@ -46,14 +46,14 @@ body{
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  
-
+ 
   
 }
 .display-image{
-  height: 500px;
+  height: 450px;
   width: 50%;
   border-radius: 20px;
+  
 }
 .home-page-hero div {
   /* position: relative; */
@@ -68,12 +68,14 @@ body{
   color: black;
   backdrop-filter: blur(10px);
   font-size: 30px;
-  margin: auto;
- 
+ text-align: center;
+ margin-left: 90px;
 }
 .home-page-hero div  .p{
     backdrop-filter: blur(10px);
     padding: 20px;
+    text-align: right;
+    
 }
 .home-page-hero div  h1::first-letter{
     font-size: larger;
@@ -85,10 +87,10 @@ body{
     font-family: Impact, sans-serif;
 }
 .btn1 a{
-    color: white;
+    color: #000;
     margin: 0%;
-    font-size:20px;
-    font-weight: 500;
+    font-size:15px;
+    font-family: Impact, sans-serif;
 }
 .btn{
     width: 130px;
@@ -97,7 +99,7 @@ body{
   transition: 1.5s;
   border-radius: 5px;
   margin-right: 10px;
-  border: none;
+  border:2px solid black;
   background-color: white;
 }
 .btn:hover {
@@ -114,7 +116,7 @@ body{
   border-radius: 5px;
   background-color: transparent;
   color: white;
-  border:5px solid white;
+  border:2px solid black;
 }
 .btt{
    margin-right: 50px;
@@ -151,8 +153,8 @@ body{
  justify-content: left;
 }
 .extra1{
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   margin: 30px 30px 40px 40px; 
   border-radius: 10px;
 }
@@ -164,8 +166,8 @@ body{
  justify-content: right;
 }
 .extra2{
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   margin: 0px 40px 40px 20px; 
   border-radius: 10px;
  
