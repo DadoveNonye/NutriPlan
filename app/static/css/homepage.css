@@ -4,19 +4,16 @@
   box-sizing: border-box;
 }
 
-body{
-    /* background-image: url("../images/nutriimage4.jpeg"); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
+body {
+  /* background-image: url("../images/nutriimage4.jpeg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
 }
 .homepage #navbar {
   /* background-image: url("../images/nutriimage4.jpeg"); */
   background-color: transparent;
- /* background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; */
   z-index: 100;
   border: none;
   border-bottom: 5px solid #00800038;
@@ -29,11 +26,6 @@ body{
 }
 .home-page-hero {
   /* background-image: url("../images/nutriimage4.jpeg"); */
-  /* height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative; */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -46,129 +38,115 @@ body{
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
- 
-  
 }
-.display-image{
+.display-image {
   height: 450px;
   width: 50%;
   border-radius: 20px;
-  
 }
 .home-page-hero div {
-  /* position: relative; */
   color: black;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 50px;
-  
-
 }
 .home-page-hero div h1 {
   color: black;
   backdrop-filter: blur(10px);
   font-size: 30px;
- text-align: center;
- margin-left: 90px;
+  text-align: center;
+  margin-left: 90px;
 }
-.home-page-hero div  .p{
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    text-align: right;
-    
+.home-page-hero div .p {
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  text-align: right;
 }
-.home-page-hero div  h1::first-letter{
-    font-size: larger;
+.home-page-hero div h1::first-letter {
+  font-size: larger;
 }
-.btn a{
-    color: #000;
-    margin: 0%;
-    font-size: 15px;
-    font-family: Impact, sans-serif;
+.btn a {
+  color: #000;
+  margin: 0%;
+  font-size: 15px;
+  font-family: Impact, sans-serif;
 }
-.btn1 a{
-    color: #000;
-    margin: 0%;
-    font-size:15px;
-    font-family: Impact, sans-serif;
+.btn1 a {
+  color: #000;
+  margin: 0%;
+  font-size: 15px;
+  font-family: Impact, sans-serif;
 }
-.btn{
-    width: 130px;
-    height: 50px;
-    margin-top: 25px;
+.btn {
+  width: 130px;
+  height: 50px;
+  margin-top: 25px;
   transition: 1.5s;
   border-radius: 5px;
   margin-right: 10px;
-  border:2px solid black;
+  border: 2px solid black;
   background-color: white;
 }
 .btn:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 .btn1:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
-.btn1{
-    width: 130px;
-    height: 50px;
-    margin-top: 25px;
+.btn1 {
+  width: 130px;
+  height: 50px;
+  margin-top: 25px;
   transition: 1.5s;
   border-radius: 5px;
   background-color: transparent;
   color: white;
-  border:2px solid black;
+  border: 2px solid black;
 }
-.btt{
-   margin-right: 50px;
+.btt {
+  margin-right: 50px;
 }
-#cards{
-    display: flex;
-    align-items:last baseline;
-    justify-content: center;
-    
-   margin-top: 50px;
-}
-#cards #card1{
-    height: 200px;
-   width: 200px;
-   border-radius: 10%;
-   background:  #f3efef;
-   
-   margin: 10px;
-   
-    
-}
-
-
-
-#card-text{
-    text-align: center;
-    margin-top:20%;
-    font-size: 1.2rem;
-}
-.extra{
-  
+#cards {
   display: flex;
- align-items: center;
- justify-content: left;
+  align-items: last baseline;
+  justify-content: center;
+
+  margin-top: 50px;
 }
-.extra1{
+#cards #card1 {
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
+  background: #f3efef;
+
+  margin: 10px;
+}
+
+#card-text {
+  text-align: center;
+  margin-top: 20%;
+  font-size: 1.2rem;
+}
+.extra {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.extra1 {
   height: 300px;
   width: 300px;
-  margin: 30px 30px 40px 40px; 
+  margin: 30px 30px 40px 40px;
   border-radius: 10px;
 }
 
-.extras{
-  
+.extras {
   display: flex;
- align-items: center;
- justify-content: right;
+  align-items: center;
+  justify-content: right;
 }
-.extra2{
+.extra2 {
   height: 300px;
   width: 300px;
-  margin: 0px 40px 40px 20px; 
+  margin: 0px 40px 40px 20px;
   border-radius: 10px;
- 
 }
