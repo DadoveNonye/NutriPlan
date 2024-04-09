@@ -4,17 +4,19 @@ from app.auth import bp
 from app.auth.forms import LoginForm, RegistrationForm, \
     ResetPasswordRequestForm, ResetPasswordForm
 from app.models import User
-from flask_login import current_user, login_user, logout_user
+from flask_login import current_user, login_user, logout_user, login_required
 from app.auth.emails import send_password_reset_email
 import sqlalchemy as sa
 from urllib.parse import urlsplit
 
-@bp.route('/')
+
 @bp.route('/index', methods=['GET', 'POST'], strict_slashes=False)
+@login_required
 def index():
     """ Home page."""
     return render_template('index.html', title='Home')
 
+@bp.route('/')
 @bp.route('/home', methods=['GET', 'POST'], strict_slashes=False)
 def home():
     """ Home page."""

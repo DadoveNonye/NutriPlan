@@ -6,6 +6,7 @@ from app.api import bp
 from flask_login import login_required, current_user
 from app.models import FoodItem, FoodIntake
 from flask_restful import reqparse
+from datetime import date
 
 
 
@@ -168,3 +169,19 @@ def get_food_intake_entries():
         food_intake_data.append(entry_data)
 
     return jsonify(food_intake_data), 200
+
+@bp.route('/food-intake/today', methods=['GET'])
+@login_required
+def get_today_calories():
+    user_id = current_user.id
+    today = date.today()
+
+    # Filter FoodIntake entries for the logged-in user and today's date
+    food_intakes = FoodIntake.query.filter_by(user_id=user_id, date=today).all()
+
+    total_calories = 0
+    for intake in food_intakes:
+        food_item = FoodItem.query.get(intake.food_item_id)
+        total_calories += food_item.calories * intake.quantity
+
+    return jsonify({'calories': total_calories})
