@@ -9,7 +9,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  height: auto;
+  border: 2px solid blue;
 }
 .homepage #navbar {
   /* background-image: url("../images/nutriimage4.jpeg"); */
@@ -40,7 +41,7 @@ body {
   align-items: center;
 }
 .display-image {
-  height: 450px;
+  height: auto;
   width: 50%;
   border-radius: 20px;
 }
@@ -149,4 +150,46 @@ body {
   width: 300px;
   margin: 0px 40px 40px 20px;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 960px) {
+  .homepage #navbar {
+    width: 100%;
+  }
+  .btt {
+    max-width: 50%;
+  }
+  .p {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .hero-background-image-home {
+    flex-direction: column;
+  }
+  .display-image {
+    width: auto;
+  }
+  .hero-background-image-home h1 {
+    margin-top: 20px;
+  }
+  .extras {
+    padding-left: 7px;
+  }
+  .extra2,
+  .extra1 {
+    height: auto;
+    width: auto;
+  }
+  .p1 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .btn,
+  .btn1 {
+    width: auto;
+    height: auto;
+  }
 }
