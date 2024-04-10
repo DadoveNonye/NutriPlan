@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import request, jsonify, render_template, flash, redirect, url_for
 from app import db
 from app.models import MealPlan, Meal
 import sqlalchemy.orm as so
@@ -7,24 +7,25 @@ from flask_login import login_required, current_user
 from app.models import FoodItem, FoodIntake
 from flask_restful import reqparse
 from datetime import date
+from app.auth.forms import CreateMealPlanForm
 
-
-
-@bp.route('/mealplans', methods=['POST'])
+@bp.route('/index', methods=['GET', 'POST'], strict_slashes=False)
+@bp.route('/mealplans', methods=['GET', 'POST'])
 @login_required
 def create_meal_plan():
-    data = request.get_json()
-    name = data.get('mealName')
-    description = data.get('mealDescription')
 
-    meal_plan = MealPlan(name=name, description=description)
-    db.session.add(meal_plan)
-    db.session.commit()
+    form = CreateMealPlanForm()
+    if form.validate_on_submit():
+        name = form.mealName.data
+        description = form.mealDescription.data
 
-    return jsonify({
-        'message': 'Meal plan created successfully',
-        'meal_plan_id': meal_plan.id
-    }), 201
+        meal_plan = MealPlan(user_id=current_user.id, name=name, description=description)
+        db.session.add(meal_plan)
+        db.session.commit()
+        flash('Meal plan created successfully', 'success')
+        return redirect(url_for('api.create_meal_plan'))
+
+    return render_template('index.html', title='Mealplan', form=form)
 
 
 @bp.route('/mealplans/<int:id>', methods=['GET'])
