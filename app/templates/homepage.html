@@ -29,14 +29,18 @@
         <button class="btn1" id="mealPlanDirection">
           <a href="{{ url_for('auth.login') }}">Login</a>
         </button>
+        <button class="btn1" id="about-us">
+          <a href="">About us</a>
+        </button>
         </div>
+
       </section>
     </div>
     <section class="hero-section home-page-hero">
         <div class="hero-background-image-home">
           <img src=" static/images/202.png" alt="" class="display-image">
         
-          <h1>FINALLY! YOUR <p class="nutriBR">NUTRIPLANS</p>ARE TAILORED TO YOUR NEEDS.</h1>
+          <h1>FINALLY! YOUR<br> NUTRIPLANS<br>ARE TAILORED TO YOUR NEEDS.</h1>
         
         </div>
         <div >
@@ -78,12 +82,12 @@
                <br> Watch your food <br>intake with us
             </p>
         </div>
-        <div id="card1" style="height: 300px;">
+        <div id="card1">
           
             <p id="card-text"><ion-icon  name="fast-food-outline"></ion-icon> <br> plan your meals with NUTRIPLANS</p>
         </div>
        
-    <BR>
+   
      <div id="card1" >
             <p id="card-text"><ion-icon name="book-outline"></ion-icon><br>
              safe eating !<br>safe consuming with<br> our NUTRIPLANS APP
@@ -91,7 +95,41 @@
         
      </div>   </div>                          
   </section>
+  <section class="sec3" >
+    <div id="about-page"><footer>
+
+    </footer>
+    <h3>About Us</h3>
+    <p>nutriplans is a website created to track foodintake<br> and consumption ,
+      this is website is always at your service be rest<br> assured that your food intake wood be guided properly
+    </p><br><hr>
+    
+      <h3>Contact Us</h3>
+      <p>Email: info@nutriplanapp.com</p>
+      <p>Phone: 123-456-7890</p>
+  
+      <p>&copy; 2024 NutriPlan App. All rights reserved.</p>
+    </footer>
+  </div>
+    
+  </section>
   </body>
+  <script >
+    var about =document.getElementById('about-us')
+    var about_us = document.getElementById('about-page')
+    about.addEventListener('click',function(e){
+       e.preventDefault();
+       smoothScroll();
+    })
+    const smoothScroll = () => {
+  targetOffset = about_us.offsetTop;
+
+  window.scrollTo({
+    top: targetOffset,
+    behavior: "smooth",
+  });
+};
+  </script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>

@@ -10,15 +10,18 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: auto;
-  border: 2px solid blue;
+  
+
 }
 .homepage #navbar {
   /* background-image: url("../images/nutriimage4.jpeg"); */
   background-color: transparent;
   z-index: 100;
   border: none;
-  border-bottom: 5px solid #00800038;
+  border-bottom: 2px solid lightgrey;
 }
+
+
 .homepage #navbar .logo img {
   max-width: 100%;
   height: 100px;
@@ -79,14 +82,15 @@ body {
   font-family: Impact, sans-serif;
 }
 .btn{
-    width: 130px;
+    width: 100px;
     height: 50px;
     margin-top: 25px;
   transition: 1.5s;
   border-radius: 5px;
-  margin-right: 10px;
-  border:2px solid black;
+  border: none;
+  border:1px solid black;
   background-color: white;
+  margin-right: 12px;
 }
 .btn:hover {
   transform: scale(1.1);
@@ -95,32 +99,31 @@ body {
   transform: scale(1.1);
 }
 .btn1{
-    width: 130px;
+    width: 100px;
     height: 50px;
     margin-top: 25px;
   transition: 1.5s;
-  
+  border-radius: 5px;
   background-color: transparent;
+  margin-right: 12px;
   color: white;
-  border:2px solid black;
+  border:1px solid black;
 }
 .btt {
   margin-right: 50px;
 }
 #cards {
   display: flex;
-  align-items: last baseline;
+  align-items:center;
   justify-content: center;
-
   margin-top: 50px;
 }
 #cards #card1 {
   height: 200px;
   width: 200px;
-  border-radius: 10%;
+  border-radius: 5%;
   background: #f3efef;
-
-  margin: 10px;
+  margin: 50px;
 }
 
 #card-text {
@@ -192,4 +195,18 @@ body {
     width: auto;
     height: auto;
   }
+}
+#about-page{
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  line-height: 30px;
+  color: black;
+  font-size: 20px;
+}
+.sec3{
+  background: linear-gradient(to bottom, #f9f9f9, lightgray);
+  padding: 40px 20px;
+ border-top: 1px solid #ddd;
+ margin-top: 120px;
 }
