@@ -31,14 +31,17 @@
             </div>
         </section>
         <section class="mealPlanForm" id="mealPlanForm">
-            <form action="" method="get" id="inputForm">
-                <label for="mealName">INPUT A MEAL</label>
-                <input required type="text" placeholder="" id="mealName" name="mealName">
-                <label for="mealDescription">MEAL DESCRIPTION</label>
-                <textarea id="mealDescription" name="mealDescription" placeholder="Can you give a description about the meal?"></textarea>
-                <button type="submit" value="submit" id="submitMeal">Submit</button>
-                <button type="button" id="create-mealplan-btn">Create Meal Plan</button>
-
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+                {{ form.mealName.label }}
+                {{ form.mealName(size=32) }}
+                {% for error in form.mealName.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+                {{ form.mealDescription.label }}
+                {{ form.mealDescription(size=64) }}
+                {{ form.submit() }}
+            </form>
 <script>
 const createMealPlanBtn = document.getElementById('create-mealplan-btn');
 
@@ -64,7 +67,17 @@ createMealPlanBtn.addEventListener('click', async()=>{
 });
 </script>
 
-            </form>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+            
             <div id="showMealDetail">MEAL DETAILS</div>
             <div id="devBox">
                 <div id="descCloseBtnBox" class="hidden"> 
