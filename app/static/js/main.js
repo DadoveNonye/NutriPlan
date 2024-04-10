@@ -152,15 +152,6 @@ function deleteMeal(mealIndex) {
   viewDescriptionBox.textContent = "";
 }
 
-// const deleteConfirmationModal = document.getElementById(
-//   "deleteConfirmationModal"
-// );
-// const cancelDeleteButton = document.getElementById("cancelDeleteButton");
-
-// deleteButtonDialog.addEventListener("click", () => {
-//   deleteConfirmationModal.style.display = "block";
-// });
-
 cancelDeleteButton.addEventListener("click", () => {
   deleteConfirmationModal.style.display = "none";
 });
