@@ -21,9 +21,19 @@
                <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
         </section>
 
+        <h1>Hi, {{ current_user.username }}!</h1>
+        {% if current_user.picture %}
+                <img class="display__pic" src="{{ url_for('static', filename='images/' + current_user.picture) }}">
+                {% else %}
+                <img src="{{ url_for('static', filename='/images/default_profile_pc.png') }}" alt="Default Image"> 
+                {% endif %}
+
         <button class="btn" id="about-us">
             <a href="{{ url_for('api.create_meal_plan') }}">Create Meal Plan</a>
           </button>
+        
+
+
     </div>
 </body>
 </html>
