@@ -9,7 +9,7 @@ from flask_restful import reqparse
 from datetime import date
 from app.auth.forms import CreateMealPlanForm
 
-@bp.route('/index', methods=['GET', 'POST'], strict_slashes=False)
+
 @bp.route('/mealplans', methods=['GET', 'POST'])
 @login_required
 def create_meal_plan():
@@ -25,7 +25,7 @@ def create_meal_plan():
         flash('Meal plan created successfully', 'success')
         return redirect(url_for('api.create_meal_plan'))
 
-    return render_template('index.html', title='Mealplan', form=form)
+    return render_template('mealplans.html', title='Mealplan', form=form)
 
 
 @bp.route('/mealplans/<int:id>', methods=['GET'])
