@@ -23,13 +23,13 @@
         </div>
         
         <div class="btt">
-        <button class="btn">
+        <button class="btn1">
             <a href="{{ url_for('auth.register') }}">REGISTER</a>
         </button>
-        <button class="btn1" id="mealPlanDirection">
+        <button class="btn" id="mealPlanDirection">
           <a href="{{ url_for('auth.login') }}">Login</a>
         </button>
-        <button class="btn1" id="about-us">
+        <button class="btn" id="about-us">
           <a href="">About us</a>
         </button>
         </div>
@@ -39,28 +39,30 @@
     <section class="hero-section home-page-hero">
         <div class="hero-background-image-home">
           <img src=" static/images/202.png" alt="" class="display-image">
-        
+         <div class="intro-txt">
           <h1>FINALLY! YOUR
             NUTRIPLANS<br>ARE TAILORED TO YOUR NEEDS.
           </h1>
          
-        </div>
-        <div >
+       
+       
           
             <p class="p">
               Join Thousands of Satisfied Users Today!<br>
               Ready to take control of your health and transform<br>
-              your lifestyle? Sign up for NutriPlan today and embark <br>
+              your lifestyle? Sign up for NutriPlan today <br>and embark 
               on your journey to a healthier, happier you!
-
+              
+              
                     
        </p>  
+       <button class="chat" style="background-color: #1dfc55ec;"><a href="{{ url_for('auth.login') }}"> Get started</a></button>
 
-
-       
+        </div>
     </div>
-    <button class="chat"><a href="{{ url_for('auth.login') }}"> Get started</a></button>
+    
     </section>
+    <hr>
   <section style="background-color: white;">
        <div class="extra">
         <img class="extra1" src="static\images\5 a Day, Fruit and Vegetable Weekly Tracker, Reward Tracker, Healthy Eating Planner - Etsy UK.jpg" alt="">
