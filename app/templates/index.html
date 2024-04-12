@@ -9,16 +9,34 @@
     
 </head>
 <body>
-    <div id="main">
         <section id="navbar">
             <div class="logo"><a href="{{ url_for('auth.home') }}"><img src="static/images/NutriPlan_logo_without_BG.png" alt="Nutri Plan logo"></a></div>
-            <nav><ul>
-                <li><a href="{{ url_for('auth.home')}}">HOME</a></li>
-                <li><a href="{{ url_for('api.get_meal_plans')}}">FOOD</a></li>
-                <li><a href="">INTAKE</a></li>
-                <li><a href="" id="showMeal">MY MEAL</a></li>
-            </ul></nav>
-               <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
+            <!-- <div class="btt">
+                <nav>
+                    <ul>
+                    <li><a href="{{ url_for('auth.home')}}">HOME</a></li>
+                    <li><a href="{{ url_for('api.get_meal_plans')}}">FOOD</a></li>
+                    <li><a href="">INTAKE</a></li>
+                    <li><a href="" id="showMeal">MY MEAL</a></li>
+                    </ul>
+                </nav>
+                <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
+            </div> -->
+            <div>
+                
+            </div>
+            <nav class="btt">
+                <ul>
+                    <li><a href="{{ url_for('auth.home')}}">HOME</a></li>
+                    <li><a href="{{ url_for('api.get_meal_plans')}}">FOOD</a></li>
+                    <li><a href="">INTAKE</a></li>
+                    <li><a href="" id="showMeal">MY MEAL</a></li>
+                </ul>
+            </nav>
+            <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
+            <div class="nav-toggle">
+           
+            </div>
         </section>
         <section class="hero-section">
             <div class="hero-background-image">
@@ -38,31 +56,8 @@
                 <textarea id="mealDescription" name="mealDescription" placeholder="Can you give a description about the meal?"></textarea>
                 <button type="submit" value="submit" id="submitMeal">Submit</button>
                 <button type="button" id="create-mealplan-btn">Create Meal Plan</button>
+            </form>
 
-<script>
-const createMealPlanBtn = document.getElementById('create-mealplan-btn');
-
-createMealPlanBtn.addEventListener('click', async()=>{
-  const name = document.getElementById('meal-plan-name').value;
-  const description = document.getElementById('meal-plan-description').value;
-
-  const response = await fetch('/mealplans', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, description })
-  });
-
-  if (!response.ok) {
-    const errorData = await response.json();
-    console.error('Error creating meal plan:', errorData.error);
-    // Display error message to the user
-  } else {
-    const data = await response.json();
-    console.log('Meal plan created:', data);
-    // Update UI to show success message or redirect to view the new plan
-  }
-});
-</script>
 
             </form>
             <div id="showMealDetail">MEAL DETAILS</div>
@@ -85,7 +80,6 @@ createMealPlanBtn.addEventListener('click', async()=>{
     </div>
 </body>
 </html>
-<!-- <script src="static/js/main.js"></script> -->
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

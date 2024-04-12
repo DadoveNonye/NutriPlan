@@ -159,3 +159,38 @@ cancelDeleteButton.addEventListener("click", () => {
 confirmDeleteButton.addEventListener("click", () => {
   deleteConfirmationModal.style.display = "none";
 });
+
+const createMealPlanBtn = document.getElementById("create-mealplan-btn");
+
+createMealPlanBtn.addEventListener("click", async () => {
+  const name = document.getElementById("meal-plan-name").value;
+  const description = document.getElementById("meal-plan-description").value;
+
+  const response = await fetch("/mealplans", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, description }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    console.error("Error creating meal plan:", errorData.error);
+    // Display error message to the user
+  } else {
+    const data = await response.json();
+    console.log("Meal plan created:", data);
+    // Update UI to show success message or redirect to view the new plan
+  }
+});
+const toggleButton = document.querySelector(".nav-toggle");
+const mobiNav = document.querySelector(".btt");
+const logout = document.querySelector(".mlogin");
+console.log(mobiNav);
+
+toggleButton.addEventListener("click", function () {
+  this.classList.toggle("open");
+  mobiNav.classList.toggle("show");
+  logout.classList.toggle("show");
+
+  console.log(mobiNav);
+});
