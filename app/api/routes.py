@@ -26,7 +26,7 @@ def create_meal_plan():
         flash('Meal plan created successfully', 'success')
         return redirect(url_for('api.create_meal_plan'))
 
-    return render_template('mealplans.html', title='Mealplan', form=form)
+    return render_template('index.html', title='Mealplan', form=form)
 
 
 @bp.route('/mealplans/<int:id>', methods=['GET'])

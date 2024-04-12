@@ -23,12 +23,8 @@
         <section class="hero-section">
             <div class="hero-background-image">
                 <h1>FINALLY! CREATE YOUR  <br class="nutriBR">MEAL PLANS </br>TAILORED TO YOUR NEEDS.</h1>
-                <!-- <button class="chat">Let's chat</button> -->
             </div>
-            <!-- <div>
-                <p>Maintaining an overall health and well-being is easier done with NutriPlan, the SEARCH stops here</p>
-                <img src="static/images/nutriImage1.jpg" alt="A descriptive image of nutrition" class="heroImage">
-            </div> -->
+            
         </section>
         <section class="mealPlanForm" id="mealPlanForm">
             <form action="" method="post">
@@ -42,30 +38,7 @@
                 {{ form.mealDescription(size=64) }}
                 {{ form.submit() }}
             </form>
-<script>
-const createMealPlanBtn = document.getElementById('create-mealplan-btn');
 
-createMealPlanBtn.addEventListener('click', async()=>{
-  const name = document.getElementById('meal-plan-name').value;
-  const description = document.getElementById('meal-plan-description').value;
-
-  const response = await fetch('/mealplans', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, description })
-  });
-
-  if (!response.ok) {
-    const errorData = await response.json();
-    console.error('Error creating meal plan:', errorData.error);
-    // Display error message to the user
-  } else {
-    const data = await response.json();
-    console.log('Meal plan created:', data);
-    // Update UI to show success message or redirect to view the new plan
-  }
-});
-</script>
 
 {% with messages = get_flashed_messages() %}
 {% if messages %}
@@ -98,7 +71,6 @@ createMealPlanBtn.addEventListener('click', async()=>{
     </div>
 </body>
 </html>
-<!-- <script src="static/js/main.js"></script> -->
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

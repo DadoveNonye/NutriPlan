@@ -33,6 +33,7 @@
           <a href="">About us</a>
         </button>
         </div>
+        <div class="nav-toggle"></div>
 
       </section>
     </div>
@@ -124,22 +125,8 @@
     
   </section>
   </body>
-  <script >
-    var about =document.getElementById('about-us')
-    var about_us = document.getElementById('about-page')
-    about.addEventListener('click',function(e){
-       e.preventDefault();
-       smoothScroll();
-    })
-    const smoothScroll = () => {
-  targetOffset = about_us.offsetTop;
+  <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
 
-  window.scrollTo({
-    top: targetOffset,
-    behavior: "smooth",
-  });
-};
-  </script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
