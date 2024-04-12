@@ -21,19 +21,31 @@
                <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
         </section>
 
-        <h1>Hi, {{ current_user.username }}!</h1>
+        <h2>Hi, {{ current_user.username }}!</h2>
         {% if current_user.picture %}
-                <img class="display__pic" src="{{ url_for('static', filename='images/' + current_user.picture) }}">
+                <img class="display-pic" src="{{ url_for('static', filename='images/' + current_user.picture) }}" id="profile">
                 {% else %}
-                <img src="{{ url_for('static', filename='/images/default_profile_pc.png') }}" alt="Default Image"> 
+                <img src="{{ url_for('static', filename='/images/default_profile_pc.png') }}" alt="Default Image" class="display-pic"> 
                 {% endif %}
-
-        <button class="btn" id="about-us">
-            <a href="{{ url_for('api.create_meal_plan') }}">Create Meal Plan</a>
+        <br>
+        <button class="btn-n" id="about-us " onclick="mypopup()" >
+            Create Meal Plan
           </button>
         
 
-
+          <section class="mealPlanForm" >
+            <form action="" method="post" id="mealPlanForm">
+                {{ form.hidden_tag() }}
+                {{ form.mealName.label }}
+                {{ form.mealName(size=32) }}
+                {% for error in form.mealName.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+                {{ form.mealDescription.label }}
+                {{ form.mealDescription(size=64) }}
+                {{ form.submit() }}
+            </form>
+          </section>
     </div>
 </body>
 </html>

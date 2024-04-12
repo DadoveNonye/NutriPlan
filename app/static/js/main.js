@@ -159,3 +159,15 @@ cancelDeleteButton.addEventListener("click", () => {
 confirmDeleteButton.addEventListener("click", () => {
   deleteConfirmationModal.style.display = "none";
 });
+
+function mypopup(){
+  
+  const popup = document.getElementById('mealPlanForm')
+  if (popup.style.display = 'none'){
+    popup.style.display = 'block'  
+  }
+  else {
+   popup.style.display='none'
+}
+}
+
