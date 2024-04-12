@@ -10,6 +10,7 @@ from datetime import date
 from app.auth.forms import CreateMealPlanForm
 
 
+@bp.route('/index', methods=['GET', 'POST'], strict_slashes=False)
 @bp.route('/mealplans', methods=['GET', 'POST'])
 @login_required
 def create_meal_plan():
