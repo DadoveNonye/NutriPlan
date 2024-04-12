@@ -3,18 +3,22 @@ from app import db
 from app.auth import bp
 from app.auth.forms import LoginForm, RegistrationForm, \
     ResetPasswordRequestForm, ResetPasswordForm
-from app.models import User
+from app.models import User, MealPlan
 from flask_login import current_user, login_user, logout_user, login_required
 from app.auth.emails import send_password_reset_email
 import sqlalchemy as sa
 from urllib.parse import urlsplit
 
 
+
 @bp.route('/index', methods=['GET', 'POST'], strict_slashes=False)
 @login_required
 def index():
-    """ Home page."""
-    return render_template('index.html')
+        """ Home page."""
+        page = request.args.get('page', 1, type=int)
+        meal_plans = MealPlan.query.paginate(page=page, per_page=10)
+        return render_template('index.html', meal_plans=meal_plans)
+
 
 @bp.route('/')
 @bp.route('/home', methods=['GET', 'POST'], strict_slashes=False)
