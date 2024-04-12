@@ -38,26 +38,8 @@
            
             </div>
         </section>
-        <section class="hero-section">
-            <div class="hero-background-image">
-                <h1>FINALLY! YOUR <br class="nutriBR">NUTRIPLANS </br>ARE TAILORED TO YOUR NEEDS.</h1>
-                <button class="chat">Let's chat</button>
-            </div>
-            <div>
-                <p>Maintaining an overall health and well-being is easier done with NutriPlan, the SEARCH stops here</p>
-                <img src="static/images/nutriImage1.jpg" alt="A descriptive image of nutrition" class="heroImage">
-            </div>
-        </section>
-        <section class="mealPlanForm" id="mealPlanForm">
-            <form action="" method="get" id="inputForm">
-                <label for="mealName">INPUT A MEAL</label>
-                <input required type="text" placeholder="" id="mealName" name="mealName">
-                <label for="mealDescription">MEAL DESCRIPTION</label>
-                <textarea id="mealDescription" name="mealDescription" placeholder="Can you give a description about the meal?"></textarea>
-                <button type="submit" value="submit" id="submitMeal">Submit</button>
-                <button type="button" id="create-mealplan-btn">Create Meal Plan</button>
-            </form>
-
+        
+       
 
         <h2>Hi, {{ current_user.username }}!</h2>
         {% if current_user.picture %}
@@ -67,7 +49,7 @@
                 {% endif %}
         <br>
         <button class="btn-n" id="about-us " onclick="mypopup()" >
-            Create Meal Plan
+            <a href="{{ url_for('api.create_meal_plan') }}">Create Meal Plan</a>
           </button>
         
         {% for mealplan in meal_plans %}
@@ -82,19 +64,7 @@
         {% endfor %}
 
 
-          <section class="mealPlanForm" >
-            <form action="" method="post" id="mealPlanForm">
-                {{ form.hidden_tag() }}
-                {{ form.mealName.label }}
-                {{ form.mealName(size=32) }}
-                {% for error in form.mealName.errors %}
-                <span style="color: red;">{{ error }}</span>
-                {% endfor %}
-                {{ form.mealDescription.label }}
-                {{ form.mealDescription(size=64) }}
-                {{ form.submit() }}
-            </form>
-          </section>
+         
     </div>
 </body>
 </html>
