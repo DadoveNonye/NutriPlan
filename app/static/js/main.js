@@ -194,3 +194,11 @@ toggleButton.addEventListener("click", function () {
 
   console.log(mobiNav);
 });
+function mypopup() {
+  const popup = document.getElementById("mealPlanForm");
+  if ((popup.style.display = "none")) {
+    popup.style.display = "block";
+  } else {
+    popup.style.display = "none";
+  }
+}

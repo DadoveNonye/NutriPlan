@@ -22,16 +22,14 @@
           <label for="username">Username:</label>
           <div class="input-icon">
             {{ form.hidden_tag() }} {{ form.username(size=20,
-            required="required") }}
-            {% with messages = get_flashed_messages(with_categories=True) %}
-            {% if messages %}
-                <ul class="flashes">
-                {% for category, message in messages %}
-                    <li class="{{ category }}">{{ message }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-            {% endwith %}
+            required="required") }} {% with messages =
+            get_flashed_messages(with_categories=True) %} {% if messages %}
+            <ul class="flashes">
+              {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %} {% endwith %}
 
             <span class="icon"
               ><ion-icon name="person-outline"></ion-icon
@@ -43,12 +41,12 @@
             <label for="password">Password:</label>
             {{ form.password(size=20, required="required") }}
             <span class="eyel"
-              ><ion-icon id="icon" name="eye-outline"></ion-icon></span>
+              ><ion-icon id="icon" name="eye-outline"></ion-icon
+            ></span>
           </div>
         </div>
 
         <button type="submit">Login</button>
-        <!-- <div><p> {{ form.remember_me.label }} {{ form.remember_me() }}</p></div> -->
         <p>
           Don't have an account?
           <a href="{{ url_for('auth.register') }}">Register Here</a>
@@ -65,22 +63,9 @@
         </p>
       </form>
     </div>
-    
   </body>
-  <script>
-    let icon = document.getElementById("icon");
-    let password = document.getElementById("password");
-    icon.addEventListener("click", function () {
-      if (password.type === "password") {
-        password.type = "text";
-        icon.name = "eye-off-outline";
-      } else {
-        password.type = "password";
-        icon.name = "eye-outline";
-      }
-    });
-  </script>
 </html>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 
 <script
   type="module"

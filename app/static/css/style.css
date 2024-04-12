@@ -105,7 +105,8 @@ nav > ul > li:hover::after {
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
-  border: 2px solid black;
+  border: none;
+  font-weight: bold;
   background-color: transparent;
 }
 .chat a {
@@ -139,16 +140,20 @@ nav > ul > li:hover::after {
   transform: scale(1.1);
 }
 
-.mealPlanForm {
-  display: flex;
-  justify-content: space-around;
-  width: 90%;
-  margin: 0 auto;
+.mealPlanForm form {
+  text-align: center;
+  width: 40%;
+  position: absolute;
+  top: 150px;
+  left: 28%;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
-  gap: 20px;
-  flex: 1;
+  display: none;
+  margin: auto;
+}
+.mealPlanForm {
+  text-align: center;
 }
 .mealPlanForm #inputForm,
 #showMealDetail {
@@ -179,7 +184,14 @@ nav > ul > li:hover::after {
 #mealDescription {
   height: 150px;
 }
-
+#main {
+  text-align: center;
+}
+.display-pic {
+  height: 200px;
+  width: 200px;
+  margin-top: 50px;
+}
 .mealPlanForm #submitMeal,
 #edit {
   width: 100%;
@@ -197,7 +209,7 @@ nav > ul > li:hover::after {
 }
 
 #devBox {
-  width: 300px;
+  width: 00px;
   height: 200px;
   border: 1px solid burlywood;
   position: relative;
@@ -324,7 +336,8 @@ form {
   text-align: center;
   margin-left: 7px;
 }
-input[type="submit"] {
+input[type="submit"],
+.btn-n {
   width: 50%;
   padding: 10px;
 
@@ -333,6 +346,10 @@ input[type="submit"] {
   border-radius: 5px;
   margin: auto;
   margin-bottom: 10px;
+}
+.btn-n {
+  width: 20%;
+  margin-top: 50px;
 }
 .container button:hover {
   opacity: 0.8;
@@ -386,9 +403,7 @@ input[type="submit"] {
 .nav-toggle {
   display: none;
 }
-.btt {
-  border: 2px solid red;
-}
+
 @keyframes slideInRight {
   from {
     opacity: 0;

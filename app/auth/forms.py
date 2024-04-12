@@ -63,5 +63,9 @@ class ResetPasswordForm(FlaskForm):
     submit = SubmitField('Request Password Reset')
 
 class CreateMealPlanForm(FlaskForm):
+    """Form for mealplan creation """
     mealName = StringField('Meal Name', validators=[DataRequired()])
-    mealDescription = StringField('Meal Description')
+    mealDescription = StringField('Meal Description', validators=[DataRequired()])
+    submit = SubmitField('Create Meal Plan')
+
+

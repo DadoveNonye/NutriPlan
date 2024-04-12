@@ -10,11 +10,11 @@ import sqlalchemy as sa
 from urllib.parse import urlsplit
 
 
-@bp.route('/index', methods=['GET', 'POST'], strict_slashes=False)
-@login_required
-def index():
-    """ Home page."""
-    return render_template('index.html', title='Home')
+# @bp.route('/index', methods=['GET', 'POST'], strict_slashes=False)
+# @login_required
+# def index():
+#     """ Home page."""
+#     return render_template('index.html')
 
 @bp.route('/')
 @bp.route('/home', methods=['GET', 'POST'], strict_slashes=False)
