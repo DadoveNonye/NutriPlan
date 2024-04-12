@@ -32,6 +32,17 @@
             <a href="{{ url_for('api.create_meal_plan') }}">Create Meal Plan</a>
           </button>
         
+        {% for mealplan in meal_plans %}
+            <div class="meal-plan">
+                <h2>{{ mealplan.name }}</h2>
+                <p>{{ mealplan.description }}</p>
+                <p>{{ mealplan.meal }}</p>
+                <p>{{ mealplan.calories }}</p>
+                <p>{{ mealplan.protein }}</p>
+                <p>{{ mealplan.carbs }}</p>
+                <p>{{ mealplan.fat }}</p>
+        {% endfor %}
+
 
 
     </div>
