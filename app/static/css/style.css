@@ -140,21 +140,27 @@ nav > ul > li:hover::after {
   transform: scale(1.1);
 }
 
-.mealPlanForm form {
+.mealPlanForm  {
   text-align: center;
   width: 40%;
-  position: absolute;
-  top: 150px;
-  left: 28%;
+ 
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
-  /* display: none; */
+  
   margin: auto;
 }
-.mealPlanForm {
+.mealPlanForm form {
   text-align: center;
+ width: fit-content;
+ 
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+   
+
 }
+
 .mealPlanForm #inputForm,
 #showMealDetail {
   width: 30%;
@@ -184,8 +190,9 @@ nav > ul > li:hover::after {
 #mealDescription {
   height: 150px;
 }
-#main {
+.main {
   text-align: center;
+  
 }
 .display-pic {
   height: 200px;

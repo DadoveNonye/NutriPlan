@@ -9,8 +9,10 @@
     
 </head>
 <body>
+    
         <section id="navbar">
-            <div class="logo"><a href="{{ url_for('auth.home') }}"><img src="static/images/NutriPlan_logo_without_BG.png" alt="Nutri Plan logo"></a></div>
+            <div class="logo"><a href="{{ url_for('auth.home') }}"
+                ><img src="static/images/NutriPlan_logo_without_BG.png" alt="Nutri Plan logo"></a></div>
             <!-- <div class="btt">
                 <nav>
                     <ul>
@@ -22,9 +24,8 @@
                 </nav>
                 <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
             </div> -->
-            <div>
-                
-            </div>
+            
+           
             <nav class="btt">
                 <ul>
                     <li><a href="{{ url_for('auth.home')}}">HOME</a></li>
@@ -33,14 +34,15 @@
                     <li><a href="" id="showMeal">MY MEAL</a></li>
                 </ul>
             </nav>
-            <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
+        </div>    <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
             <div class="nav-toggle">
            
             </div>
         </section>
         
-       
-
+        <div class="main">
+            <section class="hero-section home-page-hero">
+                <div class="hero-background-image-home">
         <h2>Hi, {{ current_user.username }}!</h2>
         {% if current_user.picture %}
                 <img class="display-pic" src="{{ url_for('static', filename='images/' + current_user.picture) }}" id="profile">
@@ -51,8 +53,8 @@
         <button class="btn-n" id="about-us " onclick="mypopup()" >
             <a href="{{ url_for('api.create_meal_plan') }}">Create Meal Plan</a>
           </button>
-        
-        {% for mealplan in meal_plans %}
+          
+            {% for mealplan in meal_plans %}
             <div class="meal-plan">
                 <h2>{{ mealplan.name }}</h2>
                 <p>{{ mealplan.description }}</p>
@@ -65,9 +67,11 @@
 
 
          
-    </div>
+   
+</div>
 </body>
 </html>
+
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

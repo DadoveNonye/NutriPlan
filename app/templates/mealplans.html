@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="main">
-        <section id="navbar">
+        <!-- <section id="navbar">
             <div class="logo"><a href="{{ url_for('auth.home') }}"><img src="static/images/NutriPlan_logo_without_BG.png" alt="Nutri Plan logo"></a></div>
             <nav><ul>
                 <li><a href="{{ url_for('auth.home')}}">HOME</a></li>
@@ -19,13 +19,13 @@
                 <li><a href="" id="showMeal">MY MEAL</a></li>
             </ul></nav>
                <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
-        </section>
-        <section class="hero-section">
+        </section> -->
+        <!-- <section class="hero-section">
             <div class="hero-background-image">
                 <h1>FINALLY! CREATE YOUR  <br class="nutriBR">MEAL PLANS </br>TAILORED TO YOUR NEEDS.</h1>
             </div>
             
-        </section>
+        </section> -->
         <section class="mealPlanForm" id="mealPlanForm">
             <form action="" method="post">
                 {{ form.hidden_tag() }}
@@ -38,7 +38,7 @@
                 {{ form.mealDescription(size=64) }}
                 {{ form.submit() }}
             </form>
-
+           </section>
 
 {% with messages = get_flashed_messages() %}
 {% if messages %}
@@ -49,7 +49,7 @@
 </ul>
 {% endif %}
 {% endwith %}
-
+<!-- 
             
             <div id="showMealDetail">MEAL DETAILS</div>
             <div id="devBox">
@@ -70,7 +70,7 @@
         </section>
     </div>
 </body>
-</html>
+</html> -->
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
