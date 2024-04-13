@@ -1,6 +1,3 @@
-// this js files won't be here, i am currently having issues with connecting the right path on my html, its here on a temporary basis to enable it work for now
-// Also, in this main js file I will be doing all my js work for now, i will split to different files when i sort the path
-
 // inputForm.js
 const mealFormDirection = document.getElementById("mealPlanDirection");
 const mealPlanForm = document.getElementById("mealPlanForm");
