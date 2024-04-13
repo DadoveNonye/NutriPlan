@@ -410,15 +410,17 @@ input[type="submit"],
 .nav-toggle {
   display: none;
 }
-
+.meal-details {
+  padding-left: 20px;
+}
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(100%); /* Menu starts off-screen to the right */
+    transform: translateX(100%);
   }
   to {
     opacity: 1;
-    transform: translateX(0); /* Menu slides in from the right */
+    transform: translateX(0);
   }
 }
 
@@ -456,10 +458,7 @@ input[type="submit"],
   .nav-toggle.open:after {
     background-image: url("../images/navclose.svg");
   }
-  /* .show {
-    visibility: visible;
-    animation: slideInRight 0.5s ease-in-out forwards;
-  } */
+
   .btt {
     position: absolute;
     top: 40px;
@@ -469,14 +468,12 @@ input[type="submit"],
     height: 100vh;
     width: 50%;
     visibility: hidden;
-    /* border: 2px solid red; */
   }
   .btt ul {
     align-items: center;
     align-self: center;
     flex-direction: column;
     justify-content: space-evenly;
-    /* animation: slideInRight 0.5s ease-in-out forwards; */
   }
   .btt ul li {
     display: flex;
@@ -485,7 +482,6 @@ input[type="submit"],
     align-content: center;
     width: 100%;
     text-align: center;
-    /* border: 2px solid blue; */
   }
   .show {
     visibility: visible;

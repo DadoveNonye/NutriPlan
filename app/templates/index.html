@@ -1,77 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NutriPlan</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    
-    
-</head>
-<body>
-    
-        <section id="navbar">
-            <div class="logo"><a href="{{ url_for('auth.home') }}"
-                ><img src="static/images/NutriPlan_logo_without_BG.png" alt="Nutri Plan logo"></a></div>
-            <!-- <div class="btt">
-                <nav>
-                    <ul>
-                    <li><a href="{{ url_for('auth.home')}}">HOME</a></li>
-                    <li><a href="{{ url_for('api.get_meal_plans')}}">FOOD</a></li>
-                    <li><a href="">INTAKE</a></li>
-                    <li><a href="" id="showMeal">MY MEAL</a></li>
-                    </ul>
-                </nav>
-                <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
-            </div> -->
-            
-           
-            <nav class="btt">
-                <ul>
-                    <li><a href="{{ url_for('auth.home')}}">HOME</a></li>
-                    <li><a href="{{ url_for('api.get_meal_plans')}}">FOOD</a></li>
-                    <li><a href="">INTAKE</a></li>
-                    <li><a href="" id="showMeal">MY MEAL</a></li>
-                </ul>
-            </nav>
-        </div>    <button class="mlogin" id="mealPlanDirection"> <a href="{{ url_for('auth.logout') }}">Logout</a></button>
-            <div class="nav-toggle">
-           
-            </div>
-        </section>
-        
-        <div class="main">
-            <section class="hero-section home-page-hero">
-                <div class="hero-background-image-home">
-        <h2>Hi, {{ current_user.username }}!</h2>
-        {% if current_user.picture %}
-                <img class="display-pic" src="{{ url_for('static', filename='images/' + current_user.picture) }}" id="profile">
-                {% else %}
-                <img src="{{ url_for('static', filename='/images/default_profile_pc.png') }}" alt="Default Image" class="display-pic"> 
-                {% endif %}
-        <br>
-        <button class="btn-n" id="about-us " onclick="mypopup()" >
-            <a href="{{ url_for('api.create_meal_plan') }}">Create Meal Plan</a>
-          </button>
-          
-            {% for mealplan in meal_plans %}
-            <div class="meal-plan">
-                <h2>{{ mealplan.name }}</h2>
-                <p>{{ mealplan.description }}</p>
-                <p>{{ mealplan.meal }}</p>
-                <p>{{ mealplan.calories }}</p>
-                <p>{{ mealplan.protein }}</p>
-                <p>{{ mealplan.carbs }}</p>
-                <p>{{ mealplan.fat }}</p>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <section id="navbar">
+      <div class="logo">
+        <a href="{{ url_for('auth.home') }}"
+          ><img
+            src="static/images/NutriPlan_logo_without_BG.png"
+            alt="Nutri Plan logo"
+        /></a>
+      </div>
+
+      <div></div>
+      <nav class="btt">
+        <ul>
+          <li><a href="{{ url_for('auth.home')}}">HOME</a></li>
+          <li><a href="{{ url_for('api.get_meal_plans')}}">FOOD</a></li>
+          <li><a href="">INTAKE</a></li>
+          <li><a href="" id="showMeal">MY MEAL</a></li>
+        </ul>
+      </nav>
+      <button class="mlogin" id="mealPlanDirection">
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+      </button>
+      <div class="nav-toggle"></div>
+    </section>
+    <div class="meal-details">
+      <h2>Hi, {{ current_user.username }}!</h2>
+      {% if current_user.picture %}
+      <img
+        class="display-pic"
+        src="{{ url_for('static', filename='images/' + current_user.picture) }}"
+        id="profile"
+      />
+      {% else %}
+      <img
+        src="{{ url_for('static', filename='/images/default_profile_pc.png') }}"
+        alt="Default Image"
+        class="display-pic"
+      />
+      {% endif %}
+      <br />
+      <button class="btn-n" id="about-us " onclick="mypopup()">
+        <a href="{{ url_for('api.create_meal_plan') }}">Create Meal Plan</a>
+      </button>
+
+      {% for mealplan in meal_plans %}
+      <div class="meal-plan">
+        <h2>{{ mealplan.name }}</h2>
+        <p>{{ mealplan.description }}</p>
+        <p>{{ mealplan.meal }}</p>
+        <p>{{ mealplan.calories }}</p>
+        <p>{{ mealplan.protein }}</p>
+        <p>{{ mealplan.carbs }}</p>
+        <p>{{ mealplan.fat }}</p>
         {% endfor %}
 
 
          
-   
-</div>
+    </div>
 </body>
 </html>
 
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
