@@ -7,7 +7,8 @@ from flask_login import login_required, current_user
 from app.models import FoodItem, FoodIntake
 from flask_restful import reqparse
 from datetime import date
-from app.auth.forms import CreateMealPlanForm
+from app.auth.forms import CreateMealPlanForm, FoodIntakeForm, FoodItemForm
+
 
 
 @bp.route('/index', methods=['GET', 'POST'], strict_slashes=False)
@@ -106,7 +107,7 @@ def delete_meal_plan(id):
     return jsonify({'message': 'Meal plan deleted successfully'}), 200
 
 
-@bp.route('/food-items', methods=['GET'])
+@bp.route('/food-item', methods=['GET'])
 @login_required
 def search_food_items():
     search_term = request.args.get('q')
@@ -127,28 +128,26 @@ def search_food_items():
 @bp.route('/food-intake', methods=['POST'])
 @login_required
 def create_food_intake():
-    # Get the data from the request body
-    data = request.get_json()
-    food_item_id = data.get('food_item_id')
-    quantity = data.get('quantity')
+    form = FoodIntakeForm()
 
-    # Check if the required fields are provided
-    if not food_item_id or not quantity:
-        return jsonify({'error': 'Please provide food item ID and quantity'}), 400
+    if form.validate_on_submit():
+        food_item_id = form.food_item_id.data
+        quantity = form.quantity.data
 
-    # Create a new FoodIntake object
-    food_intake = FoodIntake(food_item_id=food_item_id, quantity=quantity)
+        # Create a new FoodIntake object
+        food_intake = FoodIntake(food_item_id=food_item_id, quantity=quantity)
 
-    # Associate the new entry with the logged-in user
-    food_intake.user_id = current_user.id
+        # Associate the new entry with the logged-in user
+        food_intake.user_id = current_user.id
 
-    # Save the new FoodIntake object to the database
-    db.session.add(food_intake)
-    db.session.commit()
+        # Save the new FoodIntake object to the database
+        db.session.add(food_intake)
+        db.session.commit()
 
-    # Return a success message with the ID of the created entry
-    return jsonify({'message': 'Food intake entry created', 'id': food_intake.id}), 201
+        # Return a success message with the ID of the created entry
+        return jsonify({'message': 'Food intake entry created', 'id': food_intake.id}), 201
 
+    return jsonify({'error': 'Invalid form data'}), 400
 
 @bp.route('/food-intake', methods=['GET'])
 @login_required
@@ -187,3 +186,44 @@ def get_today_calories():
         total_calories += food_item.calories * intake.quantity
 
     return jsonify({'calories': total_calories})
+
+
+@bp.route('/food-items', methods=['POST', 'GET'])
+@login_required
+def create_food_item():
+    form = FoodItemForm()
+
+    if form.validate_on_submit():
+        name = form.name.data
+        calories = form.calories.data
+        protein = form.protein.data
+        carbs = form.carbs.data
+        fat = form.fat.data
+
+        # Check if the correct data types are used
+        if not isinstance(name, str):
+            flash('Invalid data type for name', 'error')
+        elif not isinstance(calories, int):
+            flash('Invalid data type for calories', 'error')
+        elif not isinstance(protein, int, float):
+            flash('Invalid data type for protein', 'error')
+        elif not isinstance(carbs, float, int):
+            flash('Invalid data type for carbs', 'error')
+        elif not isinstance(fat, float, int):
+            flash('Invalid data type for fat', 'error')
+        else:
+            # Create a new FoodItem object
+            food_item = FoodItem(name=name, calories=calories, protein=protein, carbs=carbs, fat=fat)
+
+            # Associate the new entry with the logged-in user (if applicable)
+            food_item.user_id = current_user.id
+
+            # Save the new FoodItem object to the database
+            db.session.add(food_item)
+            db.session.commit()
+
+            flash('Food item Data recorded successfully', 'success')
+            return redirect(url_for('auth.index'))
+
+    return render_template('fooditems.html', title='Food Item', form=form)
+        
