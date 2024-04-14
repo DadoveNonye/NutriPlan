@@ -1,0 +1,44 @@
+<!-- FILEPATH: /home/marvey/Documents/NutriPlan/app/templates/fooditems.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Items Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+  
+</head>
+<body>
+    <h1>Food Items Form</h1>
+    
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }}
+        {{ form.name(size=32) }}
+        {{ form.calories.label }}
+        {{ form.calories(size=32) }}
+        {% for error in form.calories.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        {{ form.protein.label }}
+        {{ form.protein(size=32) }}
+        {% for error in form.protein.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        {{ form.carbs.label }}
+        {{ form.carbs(size=32) }}
+        {% for error in form.carbs.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        {{ form.fat.label }}
+        {{ form.fat(size=32) }}
+        {% for error in form.fat.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        {{ form.submit() }}
+       
+    </form>
+   
+</body>
+</html>
