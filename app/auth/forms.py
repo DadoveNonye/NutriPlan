@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField
 from wtforms.validators import DataRequired, EqualTo, ValidationError, Email, Length, Regexp
 from app.models import User
 from app import db
@@ -68,4 +68,20 @@ class CreateMealPlanForm(FlaskForm):
     mealDescription = StringField('Meal Description', validators=[DataRequired()])
     submit = SubmitField('Create Meal Plan')
 
+class FoodIntakeForm(FlaskForm):
+    food_item_id = IntegerField('Food Item ID', validators=[DataRequired()])
+    quantity = IntegerField('Quantity', validators=[DataRequired()])
+    submit = SubmitField('Create Food Intake Entry')
+
+
+class FoodItemForm(FlaskForm):
+    """
+    Form for creating a food item.
+    """
+    name = StringField('Name', validators=[DataRequired()])
+    calories = IntegerField('Calories', validators=[DataRequired()])
+    protein = IntegerField('Protein', validators=[DataRequired()])
+    carbs = IntegerField('Carbohydrates', validators=[DataRequired()])
+    fat = IntegerField('Fat', validators=[DataRequired()])
+    submit = SubmitField('Submit Food Item Data')
 
