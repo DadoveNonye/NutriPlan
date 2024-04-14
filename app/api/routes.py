@@ -205,11 +205,11 @@ def create_food_item():
             flash('Invalid data type for name', 'error')
         elif not isinstance(calories, int):
             flash('Invalid data type for calories', 'error')
-        elif not isinstance(protein, int, float):
+        elif not isinstance(protein, int):
             flash('Invalid data type for protein', 'error')
-        elif not isinstance(carbs, float, int):
+        elif not isinstance(carbs, int):
             flash('Invalid data type for carbs', 'error')
-        elif not isinstance(fat, float, int):
+        elif not isinstance(fat,  int):
             flash('Invalid data type for fat', 'error')
         else:
             # Create a new FoodItem object

@@ -11,8 +11,8 @@
 </head>
 <body>
     <h1>Food Items Form</h1>
-    
-    <form action="" method="post">
+    <section class="mealPlanForm">
+    <form action="" method="post" i>
         {{ form.hidden_tag() }}
         {{ form.name.label }}
         {{ form.name(size=32) }}
@@ -39,6 +39,6 @@
         {{ form.submit() }}
        
     </form>
-   
+</section>
 </body>
 </html>
