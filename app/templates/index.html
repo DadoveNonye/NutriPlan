@@ -54,6 +54,12 @@
         <a href="{{ url_for('api.create_meal_plan') }}">Create Meal Plan</a>
       </button>
 
+        <button class="btn-n" id="about-us " onclick="mypopup()">
+            <a href="{{ url_for('api.create_food_item') }}">Record Food Item Data</a>
+            </button>
+            
+    </div>  
+
       {% for mealplan in meal_plans %}
       <div class="meal-plan">
         <h2>{{ mealplan.name }}</h2>
