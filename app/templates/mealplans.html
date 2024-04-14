@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="main">
+        
         <!-- <section id="navbar">
             <div class="logo"><a href="{{ url_for('auth.home') }}"><img src="static/images/NutriPlan_logo_without_BG.png" alt="Nutri Plan logo"></a></div>
             <nav><ul>
@@ -38,6 +39,9 @@
                 {{ form.mealDescription(size=64) }}
                 {{ form.submit() }}
             </form>
+            <a href="{{ url_for('auth.index') }}">
+                <ion-icon name="close-outline" class="icon" style="transform: scale(1.2);"></ion-icon>
+              </a>
            </section>
 
 {% with messages = get_flashed_messages() %}

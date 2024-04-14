@@ -124,19 +124,19 @@ nav > ul > li:hover::after {
 .mlogin {
   width: 130px;
   height: 50px;
-  background: transparent;
-  border: 2px solid #ccff99;
+  background: #1dfc55ec;
+  border:none;
   outline: none;
   border-radius: 6px;
   font-size: 1.1rem;
   font-weight: 500;
   cursor: pointer;
   margin-top: 25px;
+  margin-right: 50px;
   transition: 1.5s;
+  color: #000;
 }
 .mlogin:hover {
-  background-color: #ccff99;
-  color: #000;
   transform: scale(1.1);
 }
 
@@ -145,10 +145,10 @@ nav > ul > li:hover::after {
   width: 40%;
  
   padding: 20px;
-  background-color: #f9f9f9;
+
   border-radius: 10px;
-  
   margin: auto;
+  margin-top: 100px;
 }
 .mealPlanForm form {
   text-align: center;
@@ -244,51 +244,6 @@ nav > ul > li:hover::after {
   margin-top: 5px;
 }
 
-.edit-btn {
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #0056b3;
-  border: none;
-  color: white;
-  margin-right: 5px;
-  margin-top: 5px;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  border: 1px solid #888;
-  width: 80%;
-  padding: 20px;
-  text-align: center;
-}
-
-.modal-content button {
-  margin: 0 5px;
-}
-
-body .container {
-  font-family: sans-serif;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f5f5f5;
-}
 form {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.724);
   padding: 30px;
@@ -297,22 +252,8 @@ form {
   text-align: center;
   padding-right: 45px;
 }
-.container {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.724);
-  display: flex;
-}
 
-.container h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-  margin-right: 10px;
-  position: absolute;
-  top: 50px;
-}
+
 
 .container label {
   display: block;
@@ -331,25 +272,13 @@ form {
   outline-color: #4caf50;
 }
 
-.container button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 30px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-bottom: 15px;
-  width: 100%;
-  text-align: center;
-  margin-left: 7px;
-}
 input[type="submit"],
 .btn-n {
   width: 50%;
   padding: 10px;
 
   border: none;
-  background-color: #4caf50;
+  background-color: #1dfc55ec;
   border-radius: 5px;
   margin: auto;
   margin-bottom: 10px;
@@ -357,6 +286,9 @@ input[type="submit"],
 .btn-n {
   width: 20%;
   margin-top: 50px;
+}
+.btn-n a{
+  color: #000;
 }
 .container button:hover {
   opacity: 0.8;
