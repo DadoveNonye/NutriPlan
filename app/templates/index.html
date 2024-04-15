@@ -60,7 +60,15 @@
             
     </div>  
 
-      {% for mealplan in meal_plans %}
+    <div>
+        {% for meal_plan in meal_plans %}
+        <li class="meal-plan-card">
+            <img src="{{ url_for('static', filename='images/meal-plan-{}.jpeg'.format(loop.index0)) }}" alt="Meal Plan Image">
+            <h3>{{ meal_plan.name }}</h3>
+            <p>{{ meal_plan.description | truncate(100) }}</p>  <a href="#">View Details</a>  </li>
+        {% endfor %}
+
+      <!-- {% for mealplan in meal_plans %}
       <div class="meal-plan">
         <h2>{{ mealplan.name }}</h2>
         <p>{{ mealplan.description }}</p>
@@ -69,7 +77,7 @@
         <p>{{ mealplan.protein }}</p>
         <p>{{ mealplan.carbs }}</p>
         <p>{{ mealplan.fat }}</p>
-        {% endfor %}
+        {% endfor %} -->
 
 
          
