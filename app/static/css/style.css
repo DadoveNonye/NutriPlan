@@ -123,17 +123,18 @@ nav > ul > li:hover::after {
 
 .meal-suggestions {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    margin-top:50px;
   }
   
   .meal-plan-card {
-    width: 30%;
+    width: 50%;
     margin: 10px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
+    list-style-type: none;
   }
   
   .meal-plan-card img {
@@ -456,4 +457,7 @@ input[type="submit"],
     visibility: visible;
     animation: slideInRight 0.5s ease-in-out forwards;
   }
+}
+.ul{
+    text-align:center;
 }

@@ -54,13 +54,13 @@
         <a href="{{ url_for('api.create_meal_plan') }}" >Create Meal Plan</a>
       </button>
 
-        <button class="btn-n" id="about-us " onclick="mypopup()">
+        <button type="button" class="btn-n" id="about-us " onclick="mypopup()">
             <a href="{{ url_for('api.create_food_item') }}">Record Food Item Data</a>
             </button>
             
     </div>  
 
-    <div>
+    <div class="meal-suggestions">
         {% for meal_plan in meal_plans %}
         <li class="meal-plan-card">
             <img src="{{ url_for('static', filename='images/meal-plan-{}.jpeg'.format(loop.index0)) }}" alt="Meal Plan Image">

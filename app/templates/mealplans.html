@@ -10,6 +10,15 @@
 </head>
 <body>
     <div id="main" >
+        {% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class="ul">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
         
         <!-- <section id="navbar">
             <div class="logo"><a href="{{ url_for('auth.home') }}"><img src="static/images/NutriPlan_logo_without_BG.png" alt="Nutri Plan logo"></a></div>
@@ -44,15 +53,7 @@
               </a>
            </section>
 
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul>
-    {% for message in messages %}
-    <li>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-{% endwith %}
+
 <!-- 
             
             <div id="showMealDetail">MEAL DETAILS</div>
