@@ -151,7 +151,7 @@ nav > ul > li:hover::after {
   width: 130px;
   height: 50px;
   background: #1dfc55ec;
-  border:none;
+  border: none;
   outline: none;
   border-radius: 6px;
   font-size: 1.1rem;
@@ -166,10 +166,10 @@ nav > ul > li:hover::after {
   transform: scale(1.1);
 }
 
-.mealPlanForm  {
+.mealPlanForm {
   text-align: center;
   width: 40%;
- 
+
   padding: 20px;
 
   border-radius: 10px;
@@ -178,13 +178,11 @@ nav > ul > li:hover::after {
 }
 .mealPlanForm form {
   text-align: center;
- width: fit-content;
- 
+  width: fit-content;
+
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
-   
-
 }
 
 .mealPlanForm #inputForm,
@@ -278,7 +276,7 @@ form {
   text-align: center;
   padding-right: 45px;
 }
-.container button{
+.container button {
   width: 50%;
   padding: 10px;
 
@@ -288,7 +286,7 @@ form {
   margin: auto;
   margin-bottom: 10px;
 }
-.container{
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -328,7 +326,7 @@ input[type="submit"],
   width: 20%;
   margin-top: 50px;
 }
-.btn-n a{
+.btn-n a {
   color: #000;
 }
 .container button:hover {
@@ -398,8 +396,6 @@ input[type="submit"],
 }
 
 @media only screen and (max-width: 960px) {
-}
-@media only screen and (max-width: 960px) {
   .btt {
     max-width: 50%;
     visibility: hidden;
@@ -461,6 +457,6 @@ input[type="submit"],
     animation: slideInRight 0.5s ease-in-out forwards;
   }
 }
-.ul{
-    text-align:center;
+.ul {
+  text-align: center;
 }

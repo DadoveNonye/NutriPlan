@@ -5,14 +5,12 @@
 }
 
 body {
-  /* background-image: url("../images/nutriimage4.jpeg"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: auto;
 }
 .homepage #navbar {
-  /* background-image: url("../images/nutriimage4.jpeg"); */
   background-color: transparent;
   z-index: 100;
   border: none;
@@ -29,7 +27,6 @@ body {
   display: none;
 }
 .home-page-hero {
-  /* background-image: url("../images/nutriimage4.jpeg"); */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -51,10 +48,10 @@ body {
 .home-page-hero div {
   color: black;
   font-size: 1.2rem;
- 
+
   margin-bottom: 50px;
 }
-.intro-txt{
+.intro-txt {
   display: block;
   margin-left: 90px;
   text-align: center;
@@ -84,7 +81,6 @@ body {
   margin: 0%;
   font-size: 15px;
   font-weight: bold;
-  
 }
 .btn {
   width: 100px;
@@ -92,9 +88,9 @@ body {
   margin-top: 25px;
   transition: 1.5s;
   border-radius: 5px;
-  
+
   border: none;
-  background-color:white;
+  background-color: white;
   margin-right: 12px;
 }
 .btn:hover {
@@ -160,9 +156,8 @@ body {
   margin: 0px 40px 40px 20px;
   border-radius: 10px;
 }
-.p2{
+.p2 {
   margin-left: 20px;
-  
 }
 @keyframes slideInRight {
   from {
@@ -246,14 +241,9 @@ body {
     justify-content: center;
     align-items: end;
     align-self: flex-end;
-    /* animation: slideInRight 0.5s ease-in-out forwards; */
   }
-  /* .btt {
-    animation: slideInRight 0.5s ease-in-out forwards; 
-  }  */
 
   .show {
-    /* display: block; */
     visibility: visible;
     animation: slideInRight 0.5s ease-in-out forwards;
   }
