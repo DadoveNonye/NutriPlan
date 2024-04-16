@@ -23,6 +23,20 @@ Welcome to NutriPlan! This project aims to provide a comprehensive nutrition pla
 2. Sign up or log in to your account.
 3. Start tracking your daily calorie intake and planning your meals.
 
+## Contributing
+
+Contributions are welcome! If you would like to contribute to NutriPlan, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Make your changes and commit them: `git commit -m 'Add your feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
 ## Contact
 
 If you have any questions or suggestions, feel free to reach out to us at [chinonyenmecha@yahoo.com][okechukwuchukwuemeka018@gmail.com].
