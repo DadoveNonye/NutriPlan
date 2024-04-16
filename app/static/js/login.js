@@ -1,3 +1,4 @@
+// Handles the login section of the code
 let icon = document.getElementById("icon");
 let password = document.getElementById("password");
 icon.addEventListener("click", function () {

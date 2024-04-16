@@ -1,4 +1,8 @@
-// inputForm.js
+/**
+ * DOM manipulation and event handling
+ */
+
+// Get DOM elements
 const mealFormDirection = document.getElementById("mealPlanDirection");
 const mealPlanForm = document.getElementById("mealPlanForm");
 const descCloseBtn = document.getElementById("descCloseBtn");
@@ -11,10 +15,17 @@ const InputForm = document.getElementById("inputForm");
 const ShowMeal = document.getElementById("showMeal");
 const ShowMealDetail = document.getElementById("showMealDetail");
 
+/**
+ * Event listener for clicking on mealFormDirection element
+ * Scrolls to the mealPlanForm element smoothly
+ */
 mealFormDirection.addEventListener("click", function () {
   smoothScroll();
 });
 
+/**
+ * Scrolls to the mealPlanForm element smoothly
+ */
 const smoothScroll = () => {
   targetOffset = mealPlanForm.offsetTop;
 
@@ -28,6 +39,11 @@ const smoothScroll = () => {
 
 let storedMeal = [];
 
+/**
+ * Event listener for submitting the InputForm
+ * Stores the meal data in localStorage and resets the form
+ * @param {Event} e - The submit event
+ */
 InputForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -49,6 +65,11 @@ InputForm.addEventListener("submit", function (e) {
   InputForm.reset();
 });
 
+/**
+ * Event listener for clicking on the confirmDeleteButton
+ * Hides the deleteConfirmationModal and deletes the selected meal
+ * @param {Event} e - The click event
+ */
 confirmDeleteButton.addEventListener("click", (e) => {
   e.preventDefault();
   deleteConfirmationModal.style.display = "none";
@@ -58,6 +79,11 @@ confirmDeleteButton.addEventListener("click", (e) => {
   deleteMeal(mealIndex);
 });
 
+/**
+ * Event listener for clicking on the ShowMeal element
+ * Displays the stored meals in the ShowMealDetail element
+ * @param {Event} e - The click event
+ */
 ShowMeal.addEventListener("click", function (e) {
   e.preventDefault();
   ShowMealDetail.innerHTML = "";
@@ -116,13 +142,20 @@ ShowMeal.addEventListener("click", function (e) {
   }
 });
 
+/**
+ * Displays the meal description in the viewDescriptionBox element
+ * @param {string} mealDescription - The description of the meal
+ */
 function mealPlanDisplay(mealDescription) {
   viewDescriptionBox.textContent = mealDescription;
 }
 
 const viewDescriptionBox = document.getElementById("viewDescriptionBox");
 
-// edit.js
+/**
+ * Edits the description of a meal
+ * @param {number} mealIndex - The index of the meal to edit
+ */
 function editDescription(mealIndex) {
   if (mealIndex >= 0 && mealIndex < storedMeal.length) {
     const mealToEdit = storedMeal[mealIndex];
@@ -141,8 +174,10 @@ function editDescription(mealIndex) {
   }
 }
 
-// delete.js
-
+/**
+ * Deletes a meal from the storedmeal array
+ * @param {number} mealIndex - The index of the meal to delete
+ */
 function deleteMeal(mealIndex) {
   storedMeal.splice(mealIndex, 1);
   localStorage.setItem("mealFormData", JSON.stringify(storedMeal));
@@ -171,26 +206,30 @@ createMealPlanBtn.addEventListener("click", async () => {
 
   if (!response.ok) {
     const errorData = await response.json();
-    console.error("Error creating meal plan:", errorData.error);
     // Display error message to the user
   } else {
     const data = await response.json();
-    console.log("Meal plan created:", data);
     // Update UI to show success message or redirect to view the new plan
   }
 });
+
+/**
+ * Event listener for clicking on the toggleButton
+ * Toggles the visibility of mobiNav and logout elements
+ */
 const toggleButton = document.querySelector(".nav-toggle");
 const mobiNav = document.querySelector(".btt");
 const logout = document.querySelector(".mlogin");
-console.log(mobiNav);
 
 toggleButton.addEventListener("click", function () {
   this.classList.toggle("open");
   mobiNav.classList.toggle("show");
   logout.classList.toggle("show");
-
-  console.log(mobiNav);
 });
+
+/**
+ * Toggles the display of the mealPlanForm element
+ */
 function mypopup() {
   const popup = document.getElementById("mealPlanForm");
   if ((popup.style.display = "none")) {
