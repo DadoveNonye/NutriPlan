@@ -271,8 +271,8 @@ nav > ul > li:hover::after {
 form {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.724);
   padding: 30px;
-  max-width: 30%;
-  width:200px;
+
+  width:300px;
   border-radius: 10px;
   text-align: center;
   padding-right: 45px;
